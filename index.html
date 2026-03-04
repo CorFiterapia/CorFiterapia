@@ -5,154 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CorFiterapia | Salud y Bienestar</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
     <style>
-        /* CONFIGURACIÓN DE COLORES BASADA EN TU LOGO */
         :root {
-            --azul-cor: #0073cf; /* Azul del logo */
-            --rojo-cor: #e31e24; /* Rojo del logo */
+            --azul: #0073cf;
+            --rojo: #e31e24;
             --blanco: #ffffff;
-            --gris-fondo: #f9f9f9;
-            --texto: #333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --gris: #f4f4f4;
         }
 
         body {
-            font-family: 'Open Sans', sans-serif;
-            color: var(--texto);
-            line-height: 1.6;
-            background-color: var(--gris-fondo);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: var(--gris);
         }
 
-        /* ENCABEZADO Y NAVEGACIÓN */
+        /* BARRA DE NAVEGACIÓN */
         .navbar {
             background-color: var(--blanco);
-            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 10px 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .logo-container img {
-            height: 65px; /* Altura ideal para legibilidad */
+        /* AJUSTE DEL LOGO */
+        .logo-img {
+            height: 80px; /* Tamaño ideal */
             width: auto;
             display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container img:hover {
-            transform: scale(1.03);
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
-            align-items: center;
+            gap: 20px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--azul-cor);
-            font-weight: 600;
-            font-size: 16px;
-            transition: color 0.3s;
+            color: var(--azul);
+            font-weight: bold;
         }
 
-        .nav-links a:hover {
-            color: var(--rojo-cor);
-        }
-
-        /* BOTÓN DE ACCIÓN (ESTILO ROJO CORFITERAPIA) */
         .btn-cita {
-            background-color: var(--rojo-cor);
+            background-color: var(--rojo);
             color: white !important;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            font-size: 14px;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 6px rgba(227, 30, 36, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
         }
 
-        .btn-cita:hover {
-            background-color: #b3161b;
-            box-shadow: 0 6px 12px rgba(227, 30, 36, 0.3);
-        }
-
-        /* SECCIÓN PRINCIPAL */
+        /* SECCIÓN HERO */
         .hero {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
-                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            padding: 20px;
+            padding: 100px 20px;
+            background-color: var(--blanco);
         }
 
         .hero h1 {
-            color: var(--azul-cor);
+            color: var(--azul);
             font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        /* DISEÑO PARA MÓVILES */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 20px;
-            }
-            .nav-links {
-                margin-top: 20px;
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .hero h1 {
-                font-size: 1.8rem;
-            }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="logo-container">
-            <img src="Logo CorFiterapia _Trasparente.png" alt="Logo CorFiterapia">
+        <a href="index.html">
+            <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="CorFiterapia" class="logo-img">
         </a>
-
         <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto" class="btn-cita">Agendar Cita</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#" class="btn-cita">Agendar Cita</a></li>
         </ul>
     </nav>
 
-    <header id="inicio" class="hero">
-        <h1>Tu bienestar es nuestra prioridad</h1>
-        <p>En <strong>CorFiterapia</strong> nos enfocamos en el cuidado integral de la salud mediante técnicas avanzadas y un trato humano.</p>
-        <a href="#contacto" class="btn-cita">Empezar ahora</a>
+    <header class="hero">
+        <h1>Bienvenido a CorFiterapia</h1>
+        <p>Tu salud en las mejores manos.</p>
     </header>
 
 </body>
