@@ -82,7 +82,7 @@
         .c-info { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
         .c-info h4 { font-size: 18px; margin-bottom: 15px; color: var(--azul); height: 50px; overflow: hidden; }
 
-        /* BARRAS DE CUPO (Rediseñadas) */
+        /* BARRAS DE CUPO */
         .scarcity-box { background: #f8fafc; padding: 20px; border-radius: 18px; margin-bottom: 20px; border: 1px solid #edf2f7; }
         .scarcity-label { display: flex; justify-content: space-between; font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.5px; }
         .progress-bar-bg { background: #e2e8f0; height: 10px; border-radius: 20px; width: 100%; overflow: hidden; }
@@ -99,7 +99,7 @@
         .c-btn { background: var(--azul); color: white; border: none; padding: 16px; border-radius: 12px; cursor: pointer; font-weight: 700; width: 100%; text-transform: uppercase; transition: 0.3s; }
         .c-btn:hover { background: var(--rojo); }
 
-        /* TESTIMONIOS (Rediseño Visual Premium) */
+        /* TESTIMONIOS (Sin fotos ni etiqueta 'verificado') */
         #testimonios { background: var(--gris-claro); }
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .t-card { 
@@ -108,12 +108,10 @@
         }
         .t-card:hover { transform: scale(1.02); }
         .t-quote { font-style: italic; color: #555; margin-bottom: 25px; font-size: 15px; line-height: 1.7; }
-        .t-user { display: flex; align-items: center; gap: 15px; }
-        .t-avatar { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; background: #ddd; }
+        .t-user { display: flex; align-items: center; gap: 0; }
         .t-name h5 { color: var(--azul); font-weight: 800; font-size: 16px; }
         .t-name span { color: var(--rojo); font-size: 12px; font-weight: 600; }
-        .verified-tag { position: absolute; top: 20px; right: 25px; font-size: 10px; font-weight: 800; color: #27ae60; background: #eafaf1; padding: 4px 10px; border-radius: 20px; }
-
+        
         /* FOOTER & WHATSAPP */
         .wa-float { position: fixed; bottom: 35px; right: 35px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 2000; text-decoration: none; box-shadow: 0 10px 25px rgba(37,211,102,0.3); }
         footer { background: var(--oscuro); color: white; text-align: center; padding: 80px 10%; }
@@ -168,9 +166,9 @@
         <div class="c-card">
             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800" class="c-img">
             <div class="c-info">
-                <h4>Prevención de lesiones y riesgo biomecánico</h4>
+                <h4>Prevención de lesiones musculoesqueleticas y riesgo biomecánico</h4>
                 <div class="scarcity-box">
-                    <div class="scarcity-label"><span>Disponibilidad</span><span class="text-rojo">¡Solo 3 cupos! <i class="fas fa-bolt"></i></span></div>
+                    <div class="scarcity-label"><span>Disponibilidad</span><span class="text-rojo">¡Disponibilidad Crítica! <i class="fas fa-bolt"></i></span></div>
                     <div class="progress-bar-bg"><div class="progress-fill bg-rojo" style="width: 90%;"></div></div>
                 </div>
                 <span class="c-price">$650.000 COP</span>
@@ -183,7 +181,7 @@
             <div class="c-info">
                 <h4>Diplomado Farmacología aplicada a la fisioterapia</h4>
                 <div class="scarcity-box">
-                    <div class="scarcity-label"><span>Disponibilidad</span><span class="text-naranja">Quedan 8 lugares</span></div>
+                    <div class="scarcity-label"><span>Disponibilidad</span><span class="text-naranja">Cupos Limitados</span></div>
                     <div class="progress-bar-bg"><div class="progress-fill bg-naranja" style="width: 72%;"></div></div>
                 </div>
                 <span class="c-price">$1.500.000 COP</span>
@@ -196,7 +194,7 @@
             <div class="c-info">
                 <h4>Diplomado Prescripción del Ejercicio</h4>
                 <div class="scarcity-box">
-                    <div class="scarcity-label"><span>Disponibilidad</span><span class="text-rojo">¡Última Oportunidad!</span></div>
+                    <div class="scarcity-label"><span>Disponibilidad</span><span class="text-rojo">¡Últimos Lugares!</span></div>
                     <div class="progress-bar-bg"><div class="progress-fill bg-rojo" style="width: 95%;"></div></div>
                 </div>
                 <span class="c-price">$1.200.000 COP</span>
@@ -207,9 +205,9 @@
         <div class="c-card">
             <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=800" class="c-img">
             <div class="c-info">
-                <h4>Diplomado Rehabilitación Cardiopulmonar Adulto Mayor</h4>
+                <h4>Diplomado Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
                 <div class="scarcity-box">
-                    <div class="scarcity-label"><span>Disponibilidad</span><span class="text-naranja">Cupos limitados</span></div>
+                    <div class="scarcity-label"><span>Disponibilidad</span><span class="text-naranja">Pocos Cupos</span></div>
                     <div class="progress-bar-bg"><div class="progress-fill bg-naranja" style="width: 60%;"></div></div>
                 </div>
                 <span class="c-price">$450.000 COP</span>
@@ -223,10 +221,8 @@
     <div class="st-title"><h2>Casos de Éxito</h2></div>
     <div class="testimonials-grid">
         <article class="t-card">
-            <span class="verified-tag"><i class="fas fa-check-circle"></i> VERIFICADO</span>
             <p class="t-quote">"La formación superó mis expectativas. Protocolos basados en evidencia real que pude aplicar inmediatamente con mis pacientes."</p>
             <div class="t-user">
-                <img src="https://i.pravatar.cc/150?u=elena" class="t-avatar" alt="Dra Elena">
                 <div class="t-name">
                     <h5>Dra. Elena Martínez</h5>
                     <span>Fisioterapeuta Especialista</span>
@@ -235,10 +231,8 @@
         </article>
 
         <article class="t-card">
-            <span class="verified-tag"><i class="fas fa-check-circle"></i> VERIFICADO</span>
             <p class="t-quote">"Como estudiante, CorFiterapia me dio la confianza clínica y las herramientas prácticas que la universidad no me enseñó."</p>
             <div class="t-user">
-                <img src="https://i.pravatar.cc/150?u=camilo" class="t-avatar" alt="Camilo">
                 <div class="t-name">
                     <h5>Camilo Andrés Pineda</h5>
                     <span>Estudiante de 9no Semestre</span>
@@ -247,10 +241,8 @@
         </article>
         
         <article class="t-card">
-            <span class="verified-tag"><i class="fas fa-check-circle"></i> VERIFICADO</span>
             <p class="t-quote">"Contenido actualizado y de gran valor para los profesionales en SST. Totalmente recomendado para mejorar el perfil laboral."</p>
             <div class="t-user">
-                <img src="https://i.pravatar.cc/150?u=marta" class="t-avatar" alt="Marta">
                 <div class="t-name">
                     <h5>Marta Lucía Soto</h5>
                     <span>Profesional SST</span>
@@ -270,7 +262,7 @@
         if(!document.getElementById('nombre_est').value || !document.getElementById('email_est').value) {
             alert("⚠️ Por favor, completa tus datos primero."); return;
         }
-        alert("✅ Datos registrados. Las barras de disponibilidad muestran los cupos en tiempo real. ¡Elige tu programa!");
+        alert("✅ Datos registrados. Las barras de disponibilidad muestran el estado de los cupos en tiempo real. ¡Elige tu programa!");
         document.getElementById('cursos').scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -285,5 +277,6 @@
         } catch (e) { window.location.href = url; }
     }
 </script>
+
 </body>
 </html>
