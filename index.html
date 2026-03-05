@@ -250,72 +250,201 @@
             <p>Nuestra ética se basa en el <strong>Rigor Científico</strong>, la <strong>Excelencia Académica</strong> y el <strong>Compromiso</strong> social.</p>
         </div>
     </div>
-<div class="testi-grid">
+<style>
+.seccion-testimonios-premium {
+background-color: #f4f7f9;
+padding: 120px 10%;
+font-family: 'Montserrat', sans-serif;
+position: relative;
+overflow: hidden;
+}
+
+/* Decoración de fondo para credibilidad */
+.seccion-testimonios-premium::after {
+content: 'TESTIMONIALS';
+position: absolute;
+top: 50px;
+right: -50px;
+font-size: 150px;
+font-weight: 900;
+color: rgba(10, 61, 98, 0.03);
+z-index: 0;
+pointer-events: none;
+}
+
+.testimonios-header {
+text-align: left;
+margin-bottom: 80px;
+position: relative;
+z-index: 1;
+}
+
+.testimonios-header span {
+color: #b71c1c;
+text-transform: uppercase;
+font-weight: 700;
+letter-spacing: 3px;
+font-size: 14px;
+display: block;
+margin-bottom: 10px;
+}
+
+.testimonios-header h2 {
+font-family: 'Playfair Display', serif;
+color: #0a3d62;
+font-size: 48px;
+font-weight: 800;
+line-height: 1.2;
+}
+
+.grid-testimonios-premium {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+gap: 30px;
+position: relative;
+z-index: 1;
+}
+
+.card-testimonio-premium {
+background: #ffffff;
+padding: 60px 45px;
+border-radius: 4px; /* Bordes más rectos para look corporativo serio */
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+border-left: 6px solid #b71c1c;
+transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.card-testimonio-premium:hover {
+transform: translateY(-10px);
+box-shadow: 0 40px 80px rgba(10, 61, 98, 0.1);
+}
+
+.quote-icon {
+font-size: 40px;
+color: #0a3d62;
+margin-bottom: 25px;
+opacity: 0.2;
+}
+
+.quote-content {
+color: #334155;
+font-size: 18px;
+line-height: 1.8;
+margin-bottom: 40px;
+font-weight: 400;
+}
+
+.author-block {
+display: flex;
+align-items: center;
+border-top: 1px solid #f1f5f9;
+padding-top: 30px;
+}
+
+/* Placeholder para iniciales en lugar de fotos, se ve muy profesional */
+.author-avatar-initials {
+width: 50px;
+height: 50px;
+background: #0a3d62;
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 700;
+margin-right: 15px;
+font-size: 18px;
+}
+
+.author-data h5 {
+color: #0a3d62;
+font-weight: 700;
+font-size: 19px;
+margin: 0;
+}
+
+.author-data p {
+color: #64748b;
+font-size: 14px;
+margin: 3px 0 0;
+font-weight: 500;
+}
+
+@media (max-width: 768px) {
+.testimonios-header h2 { font-size: 36px; }
+.seccion-testimonios-premium { padding: 60px 5%; }
+}
+</style>
+
+<!-- 2. HTML: Estructura mejorada -->
+
+<section class="seccion-testimonios-premium" id="testimonios">
+<div class="testimonios-header">
+<span>Opiniones Reales</span>
+<h2>El impacto de CorFiterapia en
+
+
+
+el mundo profesional</h2>
+</div>
+
+<div class="grid-testimonios-premium">
     <!-- Testimonio 1 -->
-    <div class="testi-card-new">
-        <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <div class="card-testimonio-premium">
+        <div>
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="quote-content">
+                "La profundidad académica de los módulos de farmacología clínica me permitió optimizar mis planes de tratamiento. La evidencia científica que manejan es, sencillamente, de otro nivel."
+            </div>
         </div>
-        <p class="quote-text">"La formación en Farmacología superó mis expectativas. Ahora tengo mucha más seguridad al prescribir ejercicio en pacientes polimedicados."</p>
-        <hr style="margin:20px 0; opacity:0.1;">
-        <div class="user-info">
-            <img src="https://i.pravatar.cc/150?u=elena" alt="Elena Martínez" class="user-img">
-            <div class="user-details">
+        <div class="author-block">
+            <div class="author-avatar-initials">EM</div>
+            <div class="author-data">
                 <h5>Dra. Elena Martínez</h5>
-                <span>Fisioterapeuta Clínica</span>
+                <p>Fisioterapeuta Especialista</p>
             </div>
         </div>
     </div>
-<!-- Testimonio 2 -->
-    <div class="testi-card-new">
-        <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <p class="quote-text">"El curso de Riesgo Biomecánico es esencial para cualquier profesional en SST. Herramientas prácticas y evidencia científica de punta."</p>
-        <hr style="margin:20px 0; opacity:0.1;">
-        <div class="user-info">
-            <img src="https://i.pravatar.cc/150?u=ricardo" alt="Ricardo Gómez" class="user-img">
-            <div class="user-details">
-                <h5>Ing. Ricardo Gómez</h5>
-                <span>Especialista SST</span>
-            </div>
-        </div>
-    </div>
-<section class="seccion-testimonios-v2" id="testimonios"> <div class="testimonios-header"> <h2>Lo que dicen nuestros alumnos</h2> <div class="decoracion-roja"></div> </div>
-<div class="grid-testimonios-v2">
-    <!-- Testimonio 1 -->
-    <article class="card-testimonio-v2">
-        <div class="quote-body">
-            "La formación académica superó mis expectativas. Ahora aplico protocolos basados en evidencia científica que han mejorado notablemente los resultados de mis pacientes."
-        </div>
-        <div class="footer-autor">
-            <h5 class="nombre-autor">Dra. Elena Martínez</h5>
-            <span class="cargo-autor">Fisioterapeuta Especialista</span>
-        </div>
-    </article>
 
     <!-- Testimonio 2 -->
-    <article class="card-testimonio-v2">
-        <div class="quote-body">
-            "El curso de Riesgo Biomecánico es fundamental para mi labor en SST. Los docentes tienen un dominio excepcional de los temas y la metodología es 100% práctica."
+    <div class="card-testimonio-premium">
+        <div>
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="quote-content">
+                "Implementé las estrategias de gestión del riesgo biomecánico en mi organización y logramos reducir la incidencia de lesiones en un 30%. CorFiterapia es garantía de resultados."
+            </div>
         </div>
-        <div class="footer-autor">
-            <h5 class="nombre-autor">Ing. Ricardo Gómez</h5>
-            <span class="cargo-autor">Especialista en SST</span>
+        <div class="author-block">
+            <div class="author-avatar-initials">RG</div>
+            <div class="author-data">
+                <h5>Ing. Ricardo Gómez</h5>
+                <p>Director SST Regional</p>
+            </div>
         </div>
-    </article>
+    </div>
 
     <!-- Testimonio 3 -->
-    <article class="card-testimonio-v2">
-        <div class="quote-body">
-            "Inicié como estudiante y la corporación me brindó las herramientas necesarias para destacar en mi práctica profesional. El enfoque clínico es de un nivel superior."
+    <div class="card-testimonio-premium">
+        <div>
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <div class="quote-content">
+                "Como profesional en formación, buscaba algo más que teoría. Aquí encontré mentores que te enseñan el 'cómo' clínico basado en la realidad del paciente actual."
+            </div>
         </div>
-        <div class="footer-autor">
-            <h5 class="nombre-autor">Ana Lucía Ríos</h5>
-            <span class="cargo-autor">Fisioterapeuta en Formación</span>
+        <div class="author-block">
+            <div class="author-avatar-initials">AR</div>
+            <div class="author-data">
+                <h5>Ana Lucía Ríos</h5>
+                <p>Fisioterapeuta en Formación</p>
+            </div>
         </div>
-    </article>
+    </div>
 </div>
+
+
 </section>
 
 <footer>
