@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<!DOCTYPE html><html lang="es"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CorFiterapia | Movimiento que Transforma Salud</title>
@@ -99,7 +97,7 @@
         .c-btn { background: var(--azul); color: white; border: none; padding: 16px; border-radius: 12px; cursor: pointer; font-weight: 700; width: 100%; text-transform: uppercase; transition: 0.3s; }
         .c-btn:hover { background: var(--rojo); }
 
-        /* TESTIMONIOS (Sin fotos ni etiqueta 'verificado') */
+        /* TESTIMONIOS (Limpio) */
         #testimonios { background: var(--gris-claro); }
         .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .t-card { 
@@ -116,13 +114,33 @@
         .wa-float { position: fixed; bottom: 35px; right: 35px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 2000; text-decoration: none; box-shadow: 0 10px 25px rgba(37,211,102,0.3); }
         footer { background: var(--oscuro); color: white; text-align: center; padding: 80px 10%; }
         .footer-logo { height: 90px; filter: brightness(0) invert(1); margin-bottom: 30px; }
-    </style>
-</head>
-<body>
 
-<a href="https://wa.me/573054513754?text=Hola%20CorFiterapia,%20estoy%20interesado%20en%20recibir%20información%20sobre%20los%20Diplomados%20y%20Cursos%20de%20este%20año." class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<header>
+        /* ESTILO CONTADOR OCULTO */
+        .secret-point {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background: transparent;
+            cursor: default;
+            position: relative;
+            margin-left: 2px;
+        }
+        .secret-point:hover::after {
+            content: attr(data-v);
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+            padding: 3px 8px;
+            font-size: 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            z-index: 9999;
+        }
+    </style></head><body><a href="https://wa.me/573054513754?text=Hola%20CorFiterapia,%20estoy%20interesado%20en%20recibir%20información%20sobre%20los%20Diplomados%20y%20Cursos%20de%20este%20año." class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a><header>
     <div style="display:flex; align-items:center; gap:10px;">
         <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="Logo" class="nav-logo-img">
         <div style="line-height:1.2;">
@@ -130,15 +148,9 @@
             <span style="font-size:8px; color:var(--rojo); font-weight:600;">MOVIMIENTO QUE TRANSFORMA SALUD</span>
         </div>
     </div>
-    <nav><a href="#inicio">Inicio</a><a href="#cursos">Cursos</a><a href="#testimonios">Testimonios</a></nav>
-</header>
-
-<section class="hero" id="inicio">
+    <nav><a href="#inicio">Inicio</a><a href="#cursos">Cursos</a><a href="#testimonios">Testimonios</a></nav></header><section class="hero" id="inicio">
     <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="Logo Main" class="hero-logo-main">
-    <h2>Movimiento que transforma salud</h2>
-</section>
-
-<div class="registration-box">
+    <h2>Movimiento que transforma salud</h2></section><div class="registration-box">
     <h3>Inscripción Ciclo 2026</h3>
     <form id="mainForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
         <div class="form-grid">
@@ -157,10 +169,7 @@
         </button>
         <input type="hidden" name="Curso_Seleccionado" id="hidden_curso">
         <input type="hidden" name="_replyto" id="replyto_hidden">
-    </form>
-</div>
-
-<section id="cursos">
+    </form></div><section id="cursos">
     <div class="st-title"><h2>Programas con Inscripción Abierta</h2></div>
     <div class="courses-grid">
         <div class="c-card">
@@ -205,7 +214,7 @@
         <div class="c-card">
             <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=800" class="c-img">
             <div class="c-info">
-                <h4>Diplomado Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
+                <h4>Curso de Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
                 <div class="scarcity-box">
                     <div class="scarcity-label"><span>Disponibilidad</span><span class="text-naranja">Pocos Cupos</span></div>
                     <div class="progress-bar-bg"><div class="progress-fill bg-naranja" style="width: 60%;"></div></div>
@@ -214,10 +223,7 @@
                 <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/23fNZDp', 'Cardiopulmonar')">Inscribirme</button>
             </div>
         </div>
-    </div>
-</section>
-
-<section id="testimonios">
+    </div></section><section id="testimonios">
     <div class="st-title"><h2>Casos de Éxito</h2></div>
     <div class="testimonials-grid">
         <article class="t-card">
@@ -249,15 +255,17 @@
                 </div>
             </div>
         </article>
-    </div>
-</section>
-
-<footer>
+    </div></section><footer>
     <img src="Logo%20CorFiterapia%20_Trasparente.png" alt="Logo" class="footer-logo">
-    <p>© 2026 CorFiterapia | Movimiento que Transforma Salud<br>Colombia</p>
-</footer>
+    <p>© 2026 CorFiterapia | Movimiento que Transforma Salud<br>Colombia<span id="vCount" class="secret-point"></span></p></footer><script>
+    // Lógica del contador secreto
+    (function() {
+        let count = localStorage.getItem('site_v_26') || 0;
+        count++;
+        localStorage.setItem('site_v_26', count);
+        document.getElementById('vCount').setAttribute('data-v', count);
+    })();
 
-<script>
     function validarFormularioSolo() {
         if(!document.getElementById('nombre_est').value || !document.getElementById('email_est').value) {
             alert("⚠️ Por favor, completa tus datos primero."); return;
@@ -275,8 +283,4 @@
             await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
             window.location.href = url;
         } catch (e) { window.location.href = url; }
-    }
-</script>
-
-</body>
-</html>
+    }</script></body></html>
