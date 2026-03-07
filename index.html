@@ -401,7 +401,28 @@
            style="background: #27ae60; color: white; text-align: center; padding: 18px; text-decoration: none; font-weight: 800; font-size: 15px; transition: 0.3s; display: block; text-transform: uppercase; letter-spacing: 1px; margin: 0 20px 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(39,174,96,0.3); animation: vibrate 2s infinite;"
            onmouseover="this.style.background='#1e8449'"
            onmouseout="this.style.background='#27ae60'">
-            ¡COMPRAR AHORA CON EL 50%!
+           <div style="margin: 20px 0; background: #fff3cd; padding: 15px; border-radius: 12px; border: 1px solid #ffeeba; text-align: left;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <span style="font-size: 10px; font-weight: 800; color: #856404; text-transform: uppercase;">
+            <i class="fas fa-clock"></i> Validez de la Beca:
+        </span>
+        <span style="font-size: 11px; font-weight: 900; color: #b71c1c; animation: blinker 1s linear infinite;" id="beca-status">
+            92% AGOTADO
+        </span>
+    </div>
+    
+    <div style="width: 100%; height: 10px; background: #e2e8f0; border-radius: 10px; overflow: hidden; border: 1px solid #ddd;">
+        <div id="beca-bar" style="width: 92%; height: 100%; background: linear-gradient(90deg, #b71c1c, #ff4d4d); transition: width 1.5s ease;"></div>
+    </div>
+    
+    <p style="font-size: 9px; color: #777; margin-top: 7px; text-align: center; font-weight: 600;">
+        * El cupón <span style="color:#b71c1c">BECA50</span> expirará al completarse la barra.
+    </p>
+</div>
+
+<style>
+    @keyframes blinker { 50% { opacity: 0; } }
+</style> ¡COMPRAR AHORA CON EL 50%!
         </a>
 
         <div style="padding-bottom: 10px; text-align: center;">
@@ -440,6 +461,25 @@
     setTimeout(function() {
         document.getElementById('sticky-offer').style.bottom = '30px';
     }, 4000);
+</script>
+
+    <script>
+    (function() {
+        let percent = 92.4;
+        const bar = document.getElementById('beca-bar');
+        const text = document.getElementById('beca-status');
+
+        function simulateSales() {
+            if (percent < 99.7) {
+                // Aumenta un poco el porcentaje simulando una "nueva inscripción"
+                percent += (Math.random() * 0.15) + 0.05;
+                if(bar) bar.style.width = percent + '%';
+                if(text) text.innerText = Math.floor(percent) + '% AGOTADO';
+            }
+        }
+        // Actualiza cada 35 segundos para generar tensión constante
+        setInterval(simulateSales, 35000);
+    })();
 </script>
     
 </body>
