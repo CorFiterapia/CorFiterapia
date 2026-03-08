@@ -12,38 +12,49 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; color: #333; scroll-behavior: smooth; line-height: 1.6; padding-top: 40px; }
         
+        /* Navegación */
         .promo-bar { background: var(--azul); color: white; text-align: center; padding: 10px; font-size: 13px; position: fixed; top: 0; width: 100%; z-index: 1100; font-weight: 600; }
         header { background: white; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 40px; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
         .nav-logo-img { height: 55px; }
         nav a { text-decoration: none; color: var(--azul); font-weight: 700; margin-left: 20px; font-size: 11px; text-transform: uppercase; }
 
+        /* Hero */
         .hero { height: 60vh; background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
         .hero h2 { font-family: 'Playfair Display', serif; font-size: 35px; color: var(--azul); }
 
+        /* Secciones Generales */
         section { padding: 60px 8%; }
         .st-title { text-align: center; margin-bottom: 40px; }
         .st-title h2 { font-family: 'Playfair Display', serif; color: var(--azul); font-size: 32px; position: relative; padding-bottom: 15px; }
         .st-title h2::after { content: ''; width: 50px; height: 4px; background: var(--rojo); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
+        /* Cards de Cursos */
         .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .c-card { background: white; border-radius: 15px; overflow: hidden; border: 1px solid #eee; transition: 0.3s; display: flex; flex-direction: column; height: 100%; }
         .c-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-        .c-img { width: 100%; height: 220px; object-fit: cover; display: block; }
-        .c-info { padding: 20px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .c-img { width: 100%; height: 200px; object-fit: cover; }
+        .c-info { padding: 20px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; }
+        .c-info h4 { font-size: 18px; margin-bottom: 10px; color: var(--azul); min-height: 50px; }
+        .c-info p { font-size: 13px; color: #666; margin-bottom: 15px; flex-grow: 1; }
         .c-price { color: var(--rojo); font-weight: 800; font-size: 20px; display: block; margin: 10px 0; }
         .c-btn { background: var(--azul); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 700; width: 100%; text-transform: uppercase; transition: 0.3s; }
 
+        /* Formularios */
         .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); }
         input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Montserrat'; }
         .btn-form { background: var(--rojo); color: white; border: none; padding: 15px; width: 100%; border-radius: 30px; font-weight: 800; cursor: pointer; text-transform: uppercase; }
         .timer { font-size: 35px; font-weight: 900; color: var(--azul); margin: 15px 0; }
-        
+
+        /* Testimonios e Identidad */
+        .identity-grid, .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .i-card, .t-card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .i-card { text-align: center; }
+        .i-card i { font-size: 40px; color: var(--rojo); margin-bottom: 15px; }
+        .t-card { border-left: 4px solid var(--rojo); font-style: italic; }
+
+        /* Floating WhatsApp */
         .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; z-index: 2000; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         footer { background: var(--oscuro); color: white; text-align: center; padding: 40px; }
-
-        .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .i-card { background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .i-card i { font-size: 40px; color: var(--rojo); margin-bottom: 15px; }
     </style>
 </head>
 <body>
@@ -68,10 +79,12 @@
     <section id="cursos">
         <div class="st-title"><h2>Oferta Académica</h2></div>
         <div class="courses-grid">
+            
             <div class="c-card">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800" class="c-img">
                 <div class="c-info">
                     <h4>Diplomado Farmacología aplicada a la fisioterapia clínica</h4>
+                    <p>Aprende sus interacciones y cómo afectan el ejercicio terapéutico. Aunque el fisioterapeuta no prescribe medicamentos, es indispensable su conocimiento para fisioterapeutas en consulta clínica.</p>
                     <span class="c-price">$1.850.000 COP</span>
                     <button class="c-btn" onclick="abrirRegistro('https://mpago.li/2YNW5Ay', 'Farmacología', false)">Inscribirme ahora</button>
                 </div>
@@ -81,6 +94,7 @@
                 <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
                     <h4>Diplomado Rehabilitación Cardiopulmonar Adulto Mayor</h4>
+                    <p>Abordaje integral del adulto mayor con patologías cardíacas y pulmonares. Enfoque actualizado bajo evidencia.</p>
                     <span class="c-price">$1.539.500 COP</span>
                     <button class="c-btn" style="background:var(--verde)" onclick="abrirRegistro('https://pay.hotmart.com/P104788227O', 'Rehab Cardiopulmonar', true)">Postular a Beca ahora</button>
                 </div>
@@ -89,7 +103,8 @@
             <div class="c-card">
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
-                    <h4>Curso Prevención de lesiones y riesgo ergonómico</h4>
+                    <h4>Curso Prevención de lesiones musculoesqueleticas y riesgo ergonómico</h4>
+                    <p>Análisis biomecánico del puesto de trabajo y diseño de protocolos para prevenir patologías musculoesqueléticas laborales.</p>
                     <span class="c-price">$650.000 COP</span>
                     <button class="c-btn" onclick="abrirRegistro('https://mpago.li/2FQAbTv', 'Prevención', false)">Inscribirme ahora</button>
                 </div>
@@ -99,6 +114,7 @@
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
                     <h4>Diplomado de prescripción del ejercicio físico</h4>
+                    <p>Dosifica el ejercicio. Aprende volúmenes, intensidades y cargas científicas para diversas poblaciones y patologías.</p>
                     <span class="c-price">$1.200.000 COP</span>
                     <button class="c-btn" onclick="abrirRegistro('https://mpago.li/11GiaS8', 'Prescripción', false)">Inscribirme ahora</button>
                 </div>
@@ -109,7 +125,7 @@
     <section id="seccion-inscripcion" style="background:var(--azul); display:none; padding: 40px 5%;">
         <div class="form-container">
             <div id="registro-paso-1">
-                <h3 id="form-title" style="text-align:center; margin-bottom:20px;">Registro de Inscripción</h3>
+                <h3 style="text-align:center; margin-bottom:20px;">Registro de Inscripción</h3>
                 <form id="inscripcionForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
                     <input type="text" name="Nombre" placeholder="Nombre Completo" required>
                     <input type="text" name="Documento" placeholder="Cédula/ID" required>
@@ -132,11 +148,7 @@
                 </div>
                 <div class="timer" id="timer">15:00</div>
                 <div style="margin-top:20px;">
-                    <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&lang=es" 
-                       target="_blank" 
-                       style="display: inline-block; background: #27ae60; color: white; padding: 18px 40px; border-radius: 10px; font-weight: 800; text-decoration: none; font-size: 18px; text-transform: uppercase;">
-                        Pagar con Beca ahora
-                    </a>
+                    <a href="https://pay.hotmart.com/P104788227O?checkoutMode=2&lang=es" target="_blank" style="display: inline-block; background: #27ae60; color: white; padding: 18px 40px; border-radius: 10px; font-weight: 800; text-decoration: none; font-size: 18px; text-transform: uppercase;">Pagar con Beca ahora</a>
                 </div>
             </div>
         </div>
@@ -145,9 +157,18 @@
     <section id="identidad">
         <div class="st-title"><h2>Nuestra Identidad</h2></div>
         <div class="identity-grid">
-            <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Formación continua de alta calidad para transformar la salud.</p></div>
-            <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser la plataforma líder en actualización científica.</p></div>
-            <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia técnica y rigor científico.</p></div>
+            <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Brindar formación continua de alta calidad basada en evidencia científica para transformar la práctica clínica.</p></div>
+            <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser la plataforma líder en actualización profesional para fisioterapeutas en Latinoamérica.</p></div>
+            <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia técnica, integridad ética y compromiso con la salud de los pacientes.</p></div>
+        </div>
+    </section>
+
+    <section id="testimonios">
+        <div class="st-title"><h2>Lo que dicen nuestros alumnos</h2></div>
+        <div class="test-grid">
+            <div class="t-card">"El diplomado en farmacología cambió mi forma de abordar la consulta. Ahora entiendo mejor los efectos de los medicamentos en el ejercicio." <br><strong>- Andrea V.</strong></div>
+            <div class="t-card">"Excelente metodología. El curso de prevención de lesiones es sumamente práctico para quienes trabajamos en empresas." <br><strong>- Ricardo M.</strong></div>
+            <div class="t-card">"La especialización en adulto mayor tiene una base científica sólida. Los docentes son expertos en la materia." <br><strong>- Juliana P.</strong></div>
         </div>
     </section>
 
@@ -181,10 +202,10 @@
         function iniciarTimerSecundario() {
             let timer = 900;
             const display = document.getElementById('timer');
-            setInterval(() => {
+            const interval = setInterval(() => {
                 let m = parseInt(timer / 60, 10); let s = parseInt(timer % 60, 10);
                 display.textContent = m + ":" + (s < 10 ? "0" + s : s);
-                if (timer > 0) timer--;
+                if (--timer < 0) clearInterval(interval);
             }, 1000);
         }
     </script>
