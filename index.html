@@ -45,8 +45,9 @@
         .registration-box {
             max-width: 1000px; margin: -100px auto 60px; background: white; padding: 45px;
             border-radius: 24px; box-shadow: var(--shadow); position: relative; z-index: 10;
+            border: 1px solid #eee;
         }
-        .registration-box h3 { text-align: center; color: var(--azul); font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px; }
+        .registration-box h3 { text-align: center; color: var(--azul); font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 25px; }
         
         .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
         input, select { padding: 18px; border: 1px solid #e2e8f0; border-radius: 14px; font-family: 'Montserrat'; font-size: 15px; width: 100%; transition: 0.3s; outline: none; }
@@ -54,8 +55,8 @@
         .reg-submit-btn {
             display: block; width: fit-content; margin: 0 auto;
             background: var(--rojo); color: white; border: none; 
-            padding: 15px 40px; border-radius: 50px; cursor: pointer;
-            font-weight: 800; text-transform: uppercase; font-size: 13px;
+            padding: 18px 50px; border-radius: 50px; cursor: pointer;
+            font-weight: 800; text-transform: uppercase; font-size: 14px;
             letter-spacing: 2px; transition: 0.4s; box-shadow: 0 10px 20px rgba(183, 28, 28, 0.2);
         }
         .reg-submit-btn:hover { background: var(--azul); transform: translateY(-3px); }
@@ -144,7 +145,7 @@
 </section>
 
 <div class="registration-box">
-    <h3>Inscripción Académica 2026</h3>
+    <h3>Indica tus datos y postula a una Beca del 50%</h3>
     <form id="mainForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
         <div class="form-grid">
             <input type="text" name="Estudiante" id="nombre_est" placeholder="Nombres y Apellidos" required>
@@ -155,37 +156,37 @@
                 <option value="Fisioterapeuta">Fisioterapeuta</option>
                 <option value="Estudiante">Estudiante de Último Año de Fisioterapia</option>
                 <option value="SST">Profesional en SST</option>
-                <option value="Especialista">Otro profesional area de la salud</option>
+                <option value="Especialista">Otro profesional área de la salud</option>
             </select>
         </div>
-        <button type="button" class="reg-submit-btn" onclick="validarRegistro()">Registrar mis datos</button>
+        <button type="button" class="reg-submit-btn" onclick="validarRegistro()">Postular a Beca Ahora</button>
         <input type="hidden" name="Curso_Seleccionado" id="hidden_curso">
     </form>
 </div>
 
 <div id="seccion-beca" style="max-width: 1000px; margin: 40px auto; background: #fdfdfd; border: 2px solid var(--azul); padding: 40px; border-radius: 24px; text-align: center; display: none; box-shadow: var(--shadow);">
     <div id="paso-inicial-beca">
-        <h2 style="font-family: 'Playfair Display'; color: var(--azul); font-size: 28px;">Panel de Postulación a Beca 2026</h2>
-        <p style="margin: 15px 0; color: #555;">Tu perfil ha sido pre-seleccionado. Inicia la validación para aplicar al 50% de descuento.</p>
-        <button type="button" onclick="iniciarValidacionRigorosa()" style="background: var(--azul); color: white; padding: 15px 40px; border-radius: 50px; border: none; font-weight: 800; cursor: pointer; text-transform: uppercase;">INICIAR VALIDACIÓN</button>
+        <h2 style="font-family: 'Playfair Display'; color: var(--azul); font-size: 28px;">Verificación de Cupos Disponibles</h2>
+        <p style="margin: 15px 0; color: #555;">Tu registro ha sido recibido. Inicia la consulta en tiempo real para verificar si quedan vacantes con beneficio aplicables a tu perfil profesional.</p>
+        <button type="button" onclick="iniciarValidacionRigorosa()" style="background: var(--azul); color: white; padding: 15px 40px; border-radius: 50px; border: none; font-weight: 800; cursor: pointer; text-transform: uppercase;">CONSULTAR DISPONIBILIDAD</button>
     </div>
 
     <div id="simulador-carga" style="display: none;">
-        <h3 id="texto-validacion" style="color: var(--azul); margin-bottom: 20px;">Conectando con el sistema...</h3>
+        <h3 id="texto-validacion" style="color: var(--azul); margin-bottom: 20px;">Conectando con el servidor de admisiones...</h3>
         <div style="width: 100%; height: 20px; background: #eee; border-radius: 10px; overflow: hidden; margin-bottom: 20px;">
             <div id="barra-validacion" style="width: 0%; height: 100%; background: linear-gradient(90deg, #f1c40f, #27ae60); transition: width 0.5s;"></div>
         </div>
         <ul style="list-style: none; text-align: left; max-width: 350px; margin: 0 auto; color: #666; font-size: 14px;">
-            <li id="check1" style="margin-bottom: 10px; opacity: 0.3; transition: 0.3s;"><i class="fas fa-check-circle"></i> Verificando identidad profesional...</li>
-            <li id="check2" style="margin-bottom: 10px; opacity: 0.3; transition: 0.3s;"><i class="fas fa-check-circle"></i> Analizando antecedentes académicos...</li>
-            <li id="check3" style="margin-bottom: 10px; opacity: 0.3; transition: 0.3s;"><i class="fas fa-check-circle"></i> Consultando disponibilidad de fondos...</li>
+            <li id="check1" style="margin-bottom: 10px; opacity: 0.3; transition: 0.3s;"><i class="fas fa-search"></i> Buscando becas activas en el sistema...</li>
+            <li id="check2" style="margin-bottom: 10px; opacity: 0.3; transition: 0.3s;"><i class="fas fa-user-clock"></i> Verificando cupos liberados por actualización...</li>
+            <li id="check3" style="margin-bottom: 10px; opacity: 0.3; transition: 0.3s;"><i class="fas fa-check-double"></i> Confirmando reserva inmediata de beneficio...</li>
         </ul>
     </div>
 
     <div id="resultado-exito" style="display: none; background: #e8f5e9; padding: 30px; border-radius: 15px; border: 2px solid #27ae60;">
-        <i class="fas fa-trophy" style="font-size: 50px; color: #27ae60; margin-bottom: 15px;"></i>
-        <h2 style="color: #1b5e20; font-family: 'Playfair Display';">¡POSTULACIÓN APROBADA!</h2>
-        <p style="color: #2e7d32; font-weight: 600;">Has obtenido la Beca del 50%. El cupo se reservará por los próximos 15 minutos.</p>
+        <i class="fas fa-check-circle" style="font-size: 50px; color: #27ae60; margin-bottom: 15px;"></i>
+        <h2 style="color: #1b5e20; font-family: 'Playfair Display';">¡CUPO LOCALIZADO!</h2>
+        <p style="color: #2e7d32; font-weight: 600;">Se ha encontrado una beca disponible. Se ha reservado un cupo con el 50% de descuento exclusivamente para ti.</p>
     </div>
 </div>
 
@@ -315,7 +316,7 @@
     function validarRegistro() {
         const n = document.getElementById('nombre_est').value;
         const e = document.getElementById('email_est').value;
-        if(!n || !e) { alert("⚠️ Completa tus datos"); return; }
+        if(!n || !e) { alert("⚠️ Por favor completa tus datos para postular a la beca."); return; }
         document.getElementById('seccion-beca').style.display = 'block';
         window.scrollTo({top: document.getElementById('seccion-beca').offsetTop - 100, behavior: 'smooth'});
     }
@@ -326,26 +327,22 @@
         let b = document.getElementById('barra-validacion');
         let t = document.getElementById('texto-validacion');
         
-        // Simulación de pasos de mérito
-        setTimeout(() => { b.style.width = "35%"; document.getElementById('check1').style.opacity = "1"; document.getElementById('check1').style.color = "#27ae60"; t.innerText = "Verificando identidad profesional..."; }, 1200);
-        setTimeout(() => { b.style.width = "65%"; document.getElementById('check2').style.opacity = "1"; document.getElementById('check2').style.color = "#27ae60"; t.innerText = "Analizando antecedentes académicos..."; }, 2800);
-        setTimeout(() => { b.style.width = "100%"; document.getElementById('check3').style.opacity = "1"; document.getElementById('check3').style.color = "#27ae60"; t.innerText = "Asignando fondos presupuestarios..."; }, 4200);
+        // Simulación lógica centrada en cupos
+        setTimeout(() => { b.style.width = "35%"; document.getElementById('check1').style.opacity = "1"; document.getElementById('check1').style.color = "#27ae60"; t.innerText = "Localizando vacantes vigentes..."; }, 1200);
+        setTimeout(() => { b.style.width = "65%"; document.getElementById('check2').style.opacity = "1"; document.getElementById('check2').style.color = "#27ae60"; t.innerText = "Confirmando espacios de admisión..."; }, 2800);
+        setTimeout(() => { b.style.width = "100%"; document.getElementById('check3').style.opacity = "1"; document.getElementById('check3').style.color = "#27ae60"; t.innerText = "¡Beneficio encontrado! Reservando..."; }, 4200);
 
         setTimeout(() => { 
-            // 1. Ocultar simulador y mostrar éxito
             document.getElementById('simulador-carga').style.display = 'none';
             document.getElementById('resultado-exito').style.display = 'block';
-            
-            // 2. REVELAR LAS OFERTAS (MÉRITO COMPLETADO)
             document.getElementById('oferta-cardio').style.display = 'block';
             document.getElementById('sticky-offer').style.display = 'block';
             
-            // 3. Scroll y aparición del sticky
             setTimeout(() => { 
                 document.getElementById('sticky-offer').style.bottom = '20px';
                 window.scrollTo({top: document.getElementById('oferta-cardio').offsetTop - 100, behavior: 'smooth'}); 
-            }, 2000);
-        }, 5000);
+            }, 1800);
+        }, 5500);
     }
 
     async function procesoInscripcion(url, curso) {
@@ -354,7 +351,6 @@
         try { await fetch(form.action, { method: 'POST', body: new FormData(form) }); window.location.href = url; } catch(e) { window.location.href = url; }
     }
 
-    // Temporizador funcional
     let time = 15 * 60;
     setInterval(() => {
         let m = Math.floor(time / 60); 
