@@ -6,11 +6,26 @@
     <title>CorFiterapia | Formación Continua de calidad</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script type="text/javascript">
+        function importHotmart(){
+            var imported = document.createElement('script');
+            imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+            document.head.appendChild(imported);
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+            document.head.appendChild(link);
+        }
+        importHotmart();
+    </script>
+
     <style>
         :root { --azul: #0a3d62; --rojo: #b71c1c; --verde: #27ae60; --gris: #f4f7f9; --oscuro: #0a192f; --shadow: 0 15px 35px rgba(0,0,0,0.1); }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Montserrat', sans-serif; color: #333; scroll-behavior: smooth; line-height: 1.6; padding-top: 40px; }
-       
+        
         /* Barras y Navegación */
         .promo-bar { background: var(--azul); color: white; text-align: center; padding: 10px; font-size: 13px; position: fixed; top: 0; width: 100%; z-index: 1100; font-weight: 600; }
         header { background: white; padding: 12px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 40px; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
@@ -37,34 +52,31 @@
         .c-price { color: var(--rojo); font-weight: 800; font-size: 20px; display: block; margin: 10px 0; }
         .c-btn { background: var(--azul); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: 700; width: 100%; text-transform: uppercase; transition: 0.3s; }
 
-        /* Identidad Corporativa */
-        .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .i-card { background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .i-card i { font-size: 40px; color: var(--rojo); margin-bottom: 15px; }
-
-        /* Testimonios */
-        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-        .t-card { background: var(--gris); padding: 25px; border-radius: 15px; font-style: italic; border-left: 4px solid var(--rojo); }
-
-        /* ANUNCIO PERSISTENTE (EL QUE PERSIGUE) */
-        #urgency-ad { position: fixed; bottom: 90px; left: 20px; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 15px 45px rgba(0,0,0,0.3); z-index: 1500; display: none; border-top: 5px solid var(--rojo); max-width: 280px; animation: slideUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        @keyframes slideUp { from { transform: translateY(150%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        #urgency-ad h4 { color: var(--rojo); font-size: 16px; margin-bottom: 8px; font-weight: 800; }
-        #urgency-ad p { font-size: 12px; font-weight: 600; line-height: 1.4; color: #444; }
-        .ad-timer { background: #fff1f1; color: var(--rojo); padding: 5px 10px; border-radius: 5px; font-size: 18px; font-weight: 900; display: inline-block; margin-top: 10px; border: 1px dashed var(--rojo); }
-        .close-ad { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 14px; color: #bbb; }
+        /* ANUNCIO PERSISTENTE - OPTIMIZADO (MÁS PEQUEÑO) */
+        #urgency-ad { position: fixed; bottom: 20px; left: 20px; background: white; padding: 12px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); z-index: 1500; display: none; border-top: 4px solid var(--rojo); max-width: 220px; animation: slideUp 0.8s ease-out; }
+        @keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        #urgency-ad h4 { color: var(--rojo); font-size: 13px; margin-bottom: 4px; font-weight: 800; }
+        #urgency-ad p { font-size: 11px; font-weight: 600; line-height: 1.2; color: #444; }
+        .ad-timer { background: #fff1f1; color: var(--rojo); padding: 3px 8px; border-radius: 4px; font-size: 14px; font-weight: 900; display: inline-block; margin-top: 5px; border: 1px dashed var(--rojo); }
+        .close-ad { position: absolute; top: 5px; right: 8px; cursor: pointer; font-size: 12px; color: #bbb; }
 
         /* Formulario y Beca */
-        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); display: none; }
+        .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); }
         input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Montserrat'; }
         .btn-form { background: var(--rojo); color: white; border: none; padding: 15px; width: 100%; border-radius: 30px; font-weight: 800; cursor: pointer; text-transform: uppercase; }
-        #beca-result { text-align: center; display: none; margin-top: 20px; }
         .timer { font-size: 35px; font-weight: 900; color: var(--azul); margin: 15px 0; }
-       
+        
         /* Floating Elements */
         .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; z-index: 2000; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
         .wa-float i { font-size: 22px; margin-right: 8px; }
         footer { background: var(--oscuro); color: white; text-align: center; padding: 40px; }
+
+        /* Identidad y Testimonios */
+        .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .i-card { background: white; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .i-card i { font-size: 40px; color: var(--rojo); margin-bottom: 15px; }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .t-card { background: var(--gris); padding: 25px; border-radius: 15px; font-style: italic; border-left: 4px solid var(--rojo); }
     </style>
 </head>
 <body>
@@ -73,8 +85,8 @@
 
     <div id="urgency-ad">
         <span class="close-ad" onclick="this.parentElement.style.display='none'">✖</span>
-        <h4>¡OFERTA POR TIEMPO LIMITADO!</h4>
-        <p>Solo quedan <strong>3 becas del 50%</strong> para hoy. Tu oportunidad de aplicar termina en:</p>
+        <h4>OFERTA LIMITADA</h4>
+        <p>Solo quedan <strong>3 becas</strong>. Expira en:</p>
         <div class="ad-timer" id="sticky-timer">09:59</div>
     </div>
 
@@ -96,12 +108,11 @@
     <section id="cursos">
         <div class="st-title"><h2>Oferta Académica</h2></div>
         <div class="courses-grid">
-           
             <div class="c-card">
                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800" class="c-img" alt="Farmacología Clínica">
                 <div class="c-info">
                     <h4>Diplomado Farmacología aplicada a la fisioterapia clínica</h4>
-                    <p>Dominio de interacciones farmacológicas y su impacto en el ejercicio terapéutico. Nota: Aunque el fisioterapeuta no prescribe, debe conocer los fármacos para ajustar sus técnicas.</p>
+                    <p>Dominio de interacciones farmacológicas. Nota: El fisioterapeuta debe conocer los fármacos para ajustar sus técnicas.</p>
                     <span class="c-price">$1.850.000 COP</span>
                     <button class="c-btn" onclick="abrirRegistro('https://mpago.li/2YNW5Ay', 'Farmacología', false)">Inscribirme ahora</button>
                 </div>
@@ -111,17 +122,17 @@
                 <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img" alt="Rehabilitación">
                 <div class="c-info">
                     <h4>Diplomado Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
-                    <p>Manejo integral del paciente Adulto Mayor con patologias cardiopulmonares.</p>
+                    <p>Manejo integral del paciente Adulto Mayor con patologías cardiopulmonares.</p>
                     <span class="c-price">$1.539.500 COP</span>
-                    <button class="c-btn" style="background:var(--verde)" onclick="abrirRegistro('https://go.hotmart.com/P104788227O?dp=1', 'Rehab Cardiopulmonar', true)">Postular a Beca</button>
+                    <button class="c-btn" style="background:var(--verde)" onclick="abrirRegistro('https://pay.hotmart.com/P104788227O?checkoutMode=2', 'Rehab Cardiopulmonar', true)">Postular a Beca</button>
                 </div>
             </div>
 
             <div class="c-card">
                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500" class="c-img" alt="Prevención">
                 <div class="c-info">
-                    <h4>Prevención de lesiones y riesgo ergonómico</h4>
-                    <p>Curso Análisis del movimiento y diseño de entornos saludables para prevenir patologías laborales.</p>
+                    <h4>Curso Prevención de lesiones musculoesqueleticas y riesgo ergonómico</h4>
+                    <p>Análisis del movimiento y diseño de entornos saludables para prevenir patologías laborales.</p>
                     <span class="c-price">$650.000 COP</span>
                     <button class="c-btn" onclick="abrirRegistro('https://mpago.li/2FQAbTv', 'Prevención', false)">Inscribirme ahora</button>
                 </div>
@@ -136,62 +147,62 @@
                     <button class="c-btn" onclick="abrirRegistro('https://mpago.li/11GiaS8', 'Prescripción', false)">Inscribirme ahora</button>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section id="seccion-inscripcion" style="background:var(--azul); display:none;">
-        <div class="form-container" id="form-box" style="display:block;">
-            <h3 id="form-title" style="text-align:center; margin-bottom:20px;">Registro de Inscripción</h3>
-            <form id="inscripcionForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
-                <input type="text" name="Nombre" placeholder="Nombre Completo" required>
-                <input type="text" name="Documento" placeholder="Cédula/ID" required>
-                <input type="email" name="Email" placeholder="Correo Electrónico" required>
-                <select name="Perfil" required>
-                    <option value="">Selecciona tu perfil</option>
-                    <option value="Fisioterapeuta">Fisioterapeuta</option>
-                    <option value="Estudiante">Estudiante</option>
-                    <option value="SST">SST</option>
-                </select>
-                <input type="hidden" name="Curso" id="input-curso">
-                <button type="button" class="btn-form" onclick="procesarEnvio()">Continuar ahora</button>
-            </form>
+        <div class="form-container" id="form-box">
+            
+            <div id="registro-paso-1">
+                <h3 id="form-title" style="text-align:center; margin-bottom:20px;">Registro de Inscripción</h3>
+                <form id="inscripcionForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
+                    <input type="text" name="Nombre" placeholder="Nombre Completo" required>
+                    <input type="text" name="Documento" placeholder="Cédula/ID" required>
+                    <input type="email" name="Email" placeholder="Correo Electrónico" required>
+                    <select name="Perfil" required>
+                        <option value="">Selecciona tu perfil</option>
+                        <option value="Fisioterapeuta">Fisioterapeuta</option>
+                        <option value="Estudiante">Estudiante</option>
+                        <option value="SST">SST</option>
+                    </select>
+                    <input type="hidden" name="Curso" id="input-curso">
+                    <button type="button" class="btn-form" onclick="procesarEnvio()">Continuar ahora</button>
+                </form>
+            </div>
 
-           <div id="beca-result" style="display:none; text-align:center; padding: 20px; border: 2px solid var(--verde); border-radius: 15px; background: #f0fff4;">
-    <h2 style="color:var(--verde); margin-bottom:10px;">¡BECA DEL 50% ASIGNADA!</h2>
-    <p style="font-size:14px; color:#444;">Copia tu cupón y pégalo en la pasarela de pago de Hotmart:</p>
-    
-    <div style="background: white; border: 2px dashed var(--verde); padding: 10px; margin: 15px auto; width: fit-content; border-radius: 8px;">
-        <span id="cupón-texto" style="font-size: 24px; font-weight: 900; color: var(--oscuro); letter-spacing: 2px;">BECA50</span>
-    </div>
+            <div id="beca-result" style="display:none; text-align:center; padding: 10px; border: 2px solid var(--verde); border-radius: 15px; background: #f0fff4;">
+                <h2 style="color:var(--verde); margin-bottom:10px;">¡BECA DEL 50% ASIGNADA!</h2>
+                <p style="font-size:14px; color:#444;">Copia tu cupón y pégalo en la pasarela de pago de Hotmart:</p>
+                <div style="background: white; border: 2px dashed var(--verde); padding: 10px; margin: 15px auto; width: fit-content; border-radius: 8px;">
+                    <span style="font-size: 24px; font-weight: 900; color: var(--oscuro); letter-spacing: 2px;">BECA50</span>
+                </div>
+                <p style="font-size:12px; margin-bottom:15px;">El descuento se aplicará al digitar el código en el campo <strong>"¿Tienes un cupón de descuento?"</strong></p>
+                <div class="timer" id="timer">15:00</div>
+                <div style="margin-top:20px;">
+                    <a id="hotmart-button-trigger" onclick="return false;" href="https://pay.hotmart.com/P104788227O?checkoutMode=2" class="hotmart-fb hotmart__button-checkout">
+                        <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Pagar con Beca" style="max-width: 250px;">
+                    </a>
+                </div>
+            </div>
 
-    <p style="font-size:12px; margin-bottom:15px;">El descuento se aplicará al digitar el código en el campo <strong>"¿Tienes un cupón de descuento?"</strong></p>
-    
-    <div class="timer" id="timer" style="font-size: 30px; margin-bottom: 20px;">15:00</div>
-
-    <div style="margin-top:20px;">
-        <a onclick="return false;" href="https://pay.hotmart.com/P104788227O?checkoutMode=2" class="hotmart-fb hotmart__button-checkout">
-            <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Pagar con Beca" style="max-width: 250px;">
-        </a>
-    </div>
-</div>
+        </div>
     </section>
 
     <section id="identidad">
         <div class="st-title"><h2>Nuestra Identidad</h2></div>
         <div class="identity-grid">
-            <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Brindar formación clínica de alta calidad para transformar la práctica profesional de los terapeutas.</p></div>
-            <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser la plataforma líder en actualización científica para fisioterapeutas en Latinoamérica.</p></div>
-            <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia técnica, integridad ética, compromiso social y rigor científico.</p></div>
+            <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Brindar formación clínica de alta calidad para transformar la práctica profesional.</p></div>
+            <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser la plataforma líder en actualización científica para fisioterapeutas.</p></div>
+            <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia técnica, integridad ética y rigor científico.</p></div>
         </div>
     </section>
 
     <section id="testimonios" style="background:white;">
         <div class="st-title"><h2>Testimonios</h2></div>
         <div class="test-grid">
-            <div class="t-card">"El diplomado en farmacología me dio herramientas que no vi en la universidad. Ahora entiendo mejor cómo los fármacos afectan a mis pacientes." - Ana M.</div>
-            <div class="t-card">"La metodología online es excelente. Pude aplicar lo aprendido en rehabilitación de inmediato." - Carlos R.</div>
-            <div class="t-card">"CorFiterapia ofrece contenido actualizado con docentes que realmente saben de clínica. 100% recomendado." - Lucía P.</div>
+            <div class="t-card">"El diplomado en farmacología me dio herramientas clínicas increíbles." - Ana M.</div>
+            <div class="t-card">"La metodología online es excelente. Pude aplicar todo de inmediato." - Carlos R.</div>
+            <div class="t-card">"Contenido actualizado con docentes que realmente saben de clínica." - Lucía P.</div>
         </div>
     </section>
 
@@ -199,35 +210,31 @@
         <p>© 2026 CorFiterapia | Movimiento que transforma salud</p>
     </footer>
 
-    <a href="https://wa.me/573054513754?text=Hola%20CorFiterapia,%20deseo%20conocer%20m%C3%A1s%20informaci%C3%B3n%20de%20los%20cursos%20y%20diplomados" class="wa-float" target="_blank">
-    <i class="fab fa-whatsapp"></i> Más información
-</a>
+    <a href="https://wa.me/573054513754?text=Hola%20CorFiterapia,%20deseo%20conocer%20m%C3%A1s%20informaci%C3%B3n" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i> Más información
+    </a>
 
     <script>
-        // Lógica del Temporizador Persistente (Sticky)
+        let cursoActual = "";
+        let linkActual = "";
+        let esBeca = false;
+
+        // Temporizador del anuncio pequeño
         function startStickyTimer() {
             let time = 600;
             const display = document.getElementById('sticky-timer');
             const countdown = setInterval(() => {
                 let minutes = Math.floor(time / 60);
                 let seconds = time % 60;
-                display.innerHTML = `0${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-                if (time-- <= 0) {
-                    clearInterval(countdown);
-                    display.innerHTML = "¡EXPIRADO!";
-                }
+                display.innerHTML = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+                if (time-- <= 0) { clearInterval(countdown); display.innerHTML = "EXPIRADO"; }
             }, 1000);
         }
 
-        // Mostrar anuncio a los 3 segundos
         setTimeout(() => {
             document.getElementById('urgency-ad').style.display = 'block';
             startStickyTimer();
         }, 3000);
-
-        let cursoActual = "";
-        let linkActual = "";
-        let esBeca = false;
 
         function abrirRegistro(link, nombre, tieneBeca) {
             cursoActual = nombre;
@@ -236,21 +243,25 @@
             document.getElementById('input-curso').value = nombre;
             document.getElementById('seccion-inscripcion').style.display = 'block';
             document.getElementById('form-title').innerText = tieneBeca ? "Postulación a Beca: " + nombre : "Inscripción: " + nombre;
-            document.getElementById('inscripcionForm').style.display = 'block';
+            document.getElementById('registro-paso-1').style.display = 'block';
             document.getElementById('beca-result').style.display = 'none';
-            window.scrollTo({top: document.getElementById('seccion-inscripcion').offsetTop - 50, behavior: 'smooth'});
+            window.scrollTo({top: document.getElementById('seccion-inscripcion').offsetTop - 80, behavior: 'smooth'});
         }
 
         function procesarEnvio() {
             const form = document.getElementById('inscripcionForm');
             if(!form.checkValidity()) { alert("Por favor completa todos los campos"); return; }
+            
+            // Envío a Formspree
             fetch(form.action, { method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'} });
-           
+            
             if(esBeca) {
-                form.style.display = 'none';
+                document.getElementById('registro-paso-1').style.display = 'none';
                 document.getElementById('beca-result').style.display = 'block';
-                document.getElementById('link-pago').href = linkActual;
                 iniciarTimerSecundario();
+                setTimeout(() => {
+                    alert("¡Atención! Copia el código BECA50 para usarlo ahora en la pasarela de pago.");
+                }, 400);
             } else {
                 window.location.href = linkActual;
             }
@@ -258,46 +269,14 @@
 
         function iniciarTimerSecundario() {
             let timer = 15 * 60, minutes, seconds;
-            setInterval(function () {
+            const display = document.getElementById('timer');
+            const interval = setInterval(function () {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
-                document.getElementById('timer').textContent = minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
-                if (--timer < 0) timer = 0;
+                display.textContent = minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
+                if (--timer < 0) { clearInterval(interval); }
             }, 1000);
         }
     </script>
-    function procesarEnvio() {
-    const form = document.getElementById('inscripcionForm');
-    
-    if(!form.checkValidity()) { 
-        alert("Por favor completa tus datos para aplicar la beca."); 
-        return; 
-    }
-
-    // Enviamos los datos a Formspree
-    fetch(form.action, { 
-        method: 'POST', 
-        body: new FormData(form), 
-        headers: {'Accept': 'application/json'} 
-    });
-    
-    if(esBeca) {
-        // Ocultamos el registro y mostramos la zona de cupón y el widget
-        document.getElementById('registro-paso-1').style.display = 'none';
-        document.getElementById('beca-result').style.display = 'block';
-        
-        // Iniciamos el contador de urgencia
-        iniciarTimerSecundario();
-        
-        // Opcional: Alerta visual para que no olviden el cupón
-        setTimeout(() => {
-            alert("¡Importante! No olvides escribir el código BECA50 en la pasarela de Hotmart para activar tu descuento.");
-        }, 500);
-
-    } else {
-        // Otros cursos (Mercado Pago)
-        window.location.href = linkActual;
-    }
-}
 </body>
 </html>
