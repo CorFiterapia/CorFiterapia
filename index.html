@@ -210,10 +210,21 @@
                 if (--timer < 0) clearInterval(interval);
             }, 1000);
         }
-    </script>
-    // FUNCIÓN DEL RELOJ DE LA BARRA DE URGENCIA
+       <div id="barra-urgencia" style="background: #b71c1c; color: white; padding: 12px; text-align: center; font-family: 'Montserrat', sans-serif; width: 100%;">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <span style="font-weight: 800; text-transform: uppercase; font-size: 14px;">
+                ⚠️ ¡ÚLTIMOS CUPOS! Beca del 50% disponible
+            </span>
+            <div style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 5px; border: 1px solid white;">
+                <span style="font-size: 12px; text-transform: uppercase;">La oferta expira en:</span>
+                <span id="reloj-urgencia" style="font-size: 18px; font-weight: 900; margin-left: 8px;">10:00</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
         function iniciarRelojBarra() {
-            let segundos = 600; // 10 minutos
+            let segundos = 600; 
             const display = document.getElementById('reloj-urgencia');
             const cuentaAtras = setInterval(() => {
                 let m = Math.floor(segundos / 60);
@@ -230,18 +241,8 @@
             }, 1000);
         }
         
-        // Llamar a la función al cargar la página
         iniciarRelojBarra();
+    </script>
 </body>
-    <div id="barra-urgencia" style="background: #b71c1c; color: white; padding: 12px; text-align: center; font-family: 'Montserrat', sans-serif; width: 100%;">
-        <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap;">
-            <span style="font-weight: 800; text-transform: uppercase; font-size: 14px;">
-                ⚠️ ¡ÚLTIMOS CUPOS! Beca del 50% disponible
-            </span>
-            <div style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 5px; border: 1px solid white;">
-                <span style="font-size: 12px; text-transform: uppercase;">La oferta expira en:</span>
-                <span id="reloj-urgencia" style="font-size: 18px; font-weight: 900; margin-left: 8px;">10:00</span>
-            </div>
-        </div>
-    </div>
-</html>
+</html> 
+
