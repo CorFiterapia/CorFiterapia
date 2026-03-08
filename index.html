@@ -150,26 +150,48 @@
         </div>
     </section>
 
-    <section id="seccion-inscripcion" style="background:var(--azul); display:none;">
-        <div class="form-container" id="form-box">
+    <section id="seccion-inscripcion" style="background:var(--azul); display:none; padding: 40px 5%;">
+        <div class="form-container" id="form-box" style="display:block; background: white; max-width: 600px; margin: 0 auto; padding: 30px; border-radius: 20px;">
             
             <div id="registro-paso-1">
                 <h3 id="form-title" style="text-align:center; margin-bottom:20px;">Registro de Inscripción</h3>
                 <form id="inscripcionForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
-                    <input type="text" name="Nombre" placeholder="Nombre Completo" required>
-                    <input type="text" name="Documento" placeholder="Cédula/ID" required>
-                    <input type="email" name="Email" placeholder="Correo Electrónico" required>
-                    <select name="Perfil" required>
+                    <input type="text" name="Nombre" placeholder="Nombre Completo" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:8px;">
+                    <input type="text" name="Documento" placeholder="Cédula/ID" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:8px;">
+                    <input type="email" name="Email" placeholder="Correo Electrónico" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:8px;">
+                    <select name="Perfil" required style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:8px;">
                         <option value="">Selecciona tu perfil</option>
                         <option value="Fisioterapeuta">Fisioterapeuta</option>
                         <option value="Estudiante">Estudiante</option>
                         <option value="SST">SST</option>
                     </select>
                     <input type="hidden" name="Curso" id="input-curso">
-                    <button type="button" class="btn-form" onclick="procesarEnvio()">Continuar ahora</button>
+                    
+                    <button type="button" class="btn-form" onclick="procesarEnvio()" style="background:var(--rojo); color:white; border:none; padding:15px; width:100%; border-radius:30px; font-weight:800; cursor:pointer; text-transform:uppercase;">
+                        Continuar ahora
+                    </button>
                 </form>
             </div>
 
+            <div id="beca-result" style="display:none; text-align:center; padding: 20px; border: 2px solid var(--verde); border-radius: 15px; background: #f0fff4;">
+                <h2 style="color:var(--verde); margin-bottom:10px;">¡BECA DEL 50% ASIGNADA!</h2>
+                <p style="font-size:14px; color:#444;">Digita el código en la pasarela de pago para activar tu descuento:</p>
+                
+                <div style="background: white; border: 2px dashed var(--verde); padding: 10px; margin: 15px auto; width: fit-content; border-radius: 8px;">
+                    <span style="font-size: 24px; font-weight: 900; color: var(--oscuro); letter-spacing: 2px;">BECA50</span>
+                </div>
+
+                <div class="timer" id="timer" style="font-size: 30px; font-weight: 900; color: var(--azul); margin: 15px 0;">15:00</div>
+
+                <div style="margin-top:20px;">
+                    <a onclick="return false;" href="https://pay.hotmart.com/P104788227O?checkoutMode=2" class="hotmart-fb hotmart__button-checkout">
+                        <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Pagar ahora" style="max-width: 250px;">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
             <div id="beca-result" style="display:none; text-align:center; padding: 10px; border: 2px solid var(--verde); border-radius: 15px; background: #f0fff4;">
                 <h2 style="color:var(--verde); margin-bottom:10px;">¡BECA DEL 50% ASIGNADA!</h2>
                 <p style="font-size:14px; color:#444;">Copia tu cupón y pégalo en la pasarela de pago de Hotmart:</p>
