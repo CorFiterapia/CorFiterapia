@@ -88,6 +88,11 @@
         .i-card { background: white; padding: 40px 30px; border-radius: 25px; text-align: center; border: 1px solid #eef2f6; }
         .i-card i { font-size: 45px; color: var(--rojo); margin-bottom: 20px; }
 
+        .grid-testimonios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card-testimonio { background: var(--gris-claro); padding: 30px; border-radius: 20px; border-left: 5px solid var(--rojo); }
+        .card-testimonio p { font-style: italic; margin-bottom: 15px; }
+        .card-testimonio span { font-weight: 800; color: var(--azul); display: block; }
+
         .registration-box { max-width: 850px; margin: 0 auto; background: white; padding: 40px; border-radius: 24px; box-shadow: var(--shadow); }
         .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
         input, select { padding: 15px; border: 1px solid #ddd; border-radius: 10px; width: 100%; font-family: 'Montserrat'; }
@@ -109,7 +114,7 @@
 
     <div class="promo-bar">
         <i class="fas fa-university"></i> 
-        <span>Formación Médica: Inscripciones abiertas 2026.</span>
+        <span>Formación Continua: Inscripciones abiertas 2026.</span>
         <a href="#cursos">Ver Programas</a>
     </div>
 
@@ -128,7 +133,7 @@
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#cursos">Cursos</a>
-            <a href="#identidad">Identidad</a>
+            <a href="#testimonios">Testimonios</a>
             <a href="#postulacion">Becas</a>
         </nav>
     </header>
@@ -144,8 +149,8 @@
         <div class="courses-grid">
             
             <div class="c-card">
-                <div class="c-tag">Nuevo</div>
-                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=80" class="c-img" alt="Farmacología Aplicada">
+                <div class="c-tag">Alta Demanda</div>
+                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?auto=format&fit=crop&w=500&q=80" class="c-img" alt="Farmacología Aplicada">
                 <div class="c-info">
                     <h4>Diplomado en Farmacología Aplicada a la Fisioterapia</h4>
                     <span class="c-price">$1.850.000 COP</span>
@@ -157,7 +162,7 @@
                 <div class="c-tag">Beca disponible</div>
                 <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
-                    <h4>Diplomado Rehabilitación Cardiopulmonar</h4>
+                    <h4>Diplomado Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
                     <span class="c-price">$1.539.500 COP</span>
                     <button class="c-btn" onclick="procesoInscripcion('https://go.hotmart.com/P104788227O?dp=1', 'Rehab Cardiopulmonar')">Inscribirme</button>
                 </div>
@@ -174,7 +179,7 @@
             </div>
 
             <div class="c-card">
-                <div class="c-tag">Alta demanda</div>
+                <div class="c-tag">Certificación Directa</div>
                 <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
                     <h4>Diplomado de prescripción del ejercicio físico</h4>
@@ -186,12 +191,21 @@
         </div>
     </section>
 
-    <section id="identidad" style="background: var(--gris-claro);">
-        <div class="st-title"><h2>Nuestra Identidad</h2></div>
-        <div class="identity-grid">
-            <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Transformar la salud mediante formación continua de alta calidad.</p></div>
-            <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser referentes latinoamericanos en capacitación profesional.</p></div>
-            <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia técnica, integridad ética y compromiso.</p></div>
+    <section id="testimonios">
+        <div class="st-title"><h2>Lo que dicen nuestros estudiantes</h2></div>
+        <div class="grid-testimonios">
+            <div class="card-testimonio">
+                <p>"La actualización en farmacología cambió mi enfoque clínico completamente. Excelente metodología."</p>
+                <span>- Dr. Ricardo Gómez (Fisioterapeuta)</span>
+            </div>
+            <div class="card-testimonio">
+                <p>"El diplomado de rehabilitación cardiopulmonar es muy completo, los docentes son expertos."</p>
+                <span>- Laura Martínez (Estudiante)</span>
+            </div>
+            <div class="card-testimonio">
+                <p>"Gracias a la certificación en riesgo ergonómico pude mejorar los protocolos en mi empresa."</p>
+                <span>- Ing. Carlos Ruiz (SST)</span>
+            </div>
         </div>
     </section>
 
@@ -227,9 +241,10 @@
             </div>
             <div id="resultado-exito" style="display: none;">
                 <h2 style="color: var(--verde);">¡BECA ASIGNADA!</h2>
-                <p>Tienes 15 minutos para completar tu pago con el descuento aplicado:</p>
+                <p>Para aplicar el descuento, diligencie la palabra <strong>BECA50</strong> en la pasarela de pago.</p>
+                <p>Tienes 15 minutos para completar tu registro:</p>
                 <div id="beca-timer" style="font-size: 40px; font-weight: 900; color: var(--azul); margin: 20px 0;">15:00</div>
-                <a id="btn-pago-final" href="https://go.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" target="_blank" style="display: inline-block; padding: 18px 40px; background: var(--verde); color: white; text-decoration: none; font-weight: 800; border-radius: 50px;">PAGAR AHORA CON BECA</a>
+                <a id="btn-pago-final" href="https://go.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" target="_blank" style="display: inline-block; padding: 18px 40px; background: var(--verde); color: white; text-decoration: none; font-weight: 800; border-radius: 50px;">IR A PAGAR CON BECA</a>
             </div>
         </div>
     </section>
