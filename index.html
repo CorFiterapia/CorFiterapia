@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CorFiterapia | Movimiento que Transforma Salud</title>
+    <title>CorFiterapia | Movimiento que transforma salud</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -12,6 +12,7 @@
         :root {
             --azul: #0a3d62;
             --rojo: #b71c1c;
+            --verde: #27ae60;
             --blanco: #ffffff;
             --gris-claro: #f4f7f9;
             --oscuro: #0a192f;
@@ -33,37 +34,37 @@
         nav a:hover { color: var(--rojo); }
 
         .hero {
-            height: 70vh;
+            height: 75vh;
             background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             text-align: center; padding: 0 5%;
         }
         .hero-logo-main { max-width: 450px; width: 80%; margin-bottom: 20px; filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1)); }
-        .hero h2 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 5vw, 40px); color: var(--azul); font-weight: 700; text-transform: uppercase; }
+        .hero h2 { font-family: 'Playfair Display', serif; font-size: clamp(22px, 5vw, 40px); color: var(--azul); font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+        .hero p { font-weight: 600; color: var(--rojo); letter-spacing: 2px; text-transform: uppercase; font-size: 14px; }
 
         section { padding: 80px 8%; }
         .st-title { text-align: center; margin-bottom: 50px; }
         .st-title h2 { font-family: 'Playfair Display', serif; font-size: clamp(30px, 5vw, 45px); color: var(--azul); position: relative; padding-bottom: 20px; }
         .st-title h2::after { content: ''; width: 60px; height: 5px; background: var(--rojo); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
 
-        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .c-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #f0f0f0; transition: 0.4s; display: flex; flex-direction: column; height: 100%; }
+        .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .c-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid #f0f0f0; transition: 0.4s; display: flex; flex-direction: column; height: 100%; position: relative; }
         .c-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .c-tag { position: absolute; top: 15px; right: 15px; background: var(--rojo); color: white; padding: 5px 15px; border-radius: 50px; font-size: 10px; font-weight: 800; text-transform: uppercase; z-index: 10; }
         .c-img { width: 100%; height: 200px; object-fit: cover; }
         .c-info { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .c-info h4 { font-family: 'Playfair Display', serif; color: var(--azul); font-size: 20px; margin-bottom: 15px; min-height: 2.6em; }
+        .c-info h4 { font-family: 'Playfair Display', serif; color: var(--azul); font-size: 19px; margin-bottom: 15px; min-height: 3em; }
         .c-price { color: var(--rojo); font-weight: 800; font-size: 24px; margin-bottom: 15px; display: block; }
         .c-btn { background: var(--azul); color: white; border: none; padding: 15px; border-radius: 12px; cursor: pointer; font-weight: 700; text-transform: uppercase; transition: 0.3s; width: 100%; }
         .c-btn:hover { background: var(--rojo); }
 
-        /* Estilos Identidad */
         .identity-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .i-card { background: white; padding: 40px 30px; border-radius: 25px; text-align: center; border: 1px solid #eef2f6; transition: 0.3s; }
         .i-card i { font-size: 45px; color: var(--rojo); margin-bottom: 20px; }
         .i-card h3 { color: var(--azul); font-family: 'Playfair Display'; margin-bottom: 15px; }
 
-        /* Estilos Testimonios */
         .grid-testimonios { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .card-testimonio { background: white; padding: 35px; border-radius: 20px; border-left: 5px solid var(--azul); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .quote-body { font-style: italic; color: #555; margin-bottom: 20px; font-size: 15px; }
@@ -83,6 +84,7 @@
             background: var(--rojo); color: white; border: none; 
             padding: 18px 45px; border-radius: 50px; cursor: pointer;
             font-weight: 800; text-transform: uppercase; transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(183, 28, 28, 0.2);
         }
 
         .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 2000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); text-decoration: none; }
@@ -92,14 +94,16 @@
 </head>
 <body>
 
-<a href="https://wa.me/573054513754" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/573054513754?text=Hola%20Corfiterapia%20deseo%20conocer%20mas%20informacion%20de%20los%20cursos%20y%20diplomados" class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
 <header>
     <div class="logo-box" style="display:flex; align-items:center; gap:10px;">
         <img src="Logo CorFiterapia _Trasparente.png" class="nav-logo-img">
         <div style="line-height:1.2;">
             <span style="font-weight:800; color:var(--azul); font-size:14px;">CORFITERAPIA</span><br>
-            <span style="font-size:7px; color:var(--rojo); font-weight:600;">MOVIMIENTO QUE TRANSFORMA SALUD</span>
+            <span style="font-size:7px; color:var(--rojo); font-weight:600; text-transform: uppercase;">Movimiento que transforma salud</span>
         </div>
     </div>
     <nav>
@@ -114,33 +118,46 @@
 <section class="hero" id="inicio">
     <img src="Logo CorFiterapia _Trasparente.png" class="hero-logo-main">
     <h2>Excelencia en Formación Clínica</h2>
+    <p>Movimiento que transforma salud</p>
 </section>
 
 <section id="cursos">
     <div class="st-title"><h2>Oferta Académica 2026</h2></div>
     <div class="courses-grid">
         <div class="c-card">
+            <div class="c-tag">Últimos cupos</div>
             <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500" class="c-img">
             <div class="c-info">
-                <h4>Prevención de lesiones y riesgo biomecánico</h4>
+                <h4>Curso Prevención de lesiones y riesgo biomecánico</h4>
                 <span class="c-price">$650.000 COP</span>
                 <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/2FQAbTv', 'Prevención')">Inscribirme</button>
             </div>
         </div>
         <div class="c-card">
+            <div class="c-tag">Alta demanda</div>
             <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=500" class="c-img">
             <div class="c-info">
-                <h4>Prescripción del Ejercicio Terapéutico</h4>
+                <h4>Diplomado Prescripción del Ejercicio Terapéutico</h4>
                 <span class="c-price">$1.200.000 COP</span>
                 <button class="c-btn" onclick="procesoInscripcion('https://mpago.li/11GiaS8', 'Prescripción')">Inscribirme</button>
             </div>
         </div>
         <div class="c-card">
+            <div class="c-tag">Beca disponible</div>
             <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img">
             <div class="c-info">
-                <h4>Rehabilitación Cardíaca en el Adulto Mayor</h4>
+                <h4>Diplomado Rehabilitación Cardíaca en el Adulto Mayor</h4>
                 <span class="c-price">$1.539.500 COP</span>
                 <button class="c-btn" onclick="procesoInscripcion('https://go.hotmart.com/P104788227O?dp=1', 'Cardiaca Adulto Mayor')">Inscribirme</button>
+            </div>
+        </div>
+        <div class="c-card">
+            <div class="c-tag">Nuevo</div>
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbbb88?auto=format&fit=crop&w=500" class="c-img">
+            <div class="c-info">
+                <h4>Diplomado en Farmacología en Fisioterapia</h4>
+                <span class="c-price">$1.100.000 COP</span>
+                <button class="c-btn" onclick="procesoInscripcion('#', 'Farmacologia')">Inscribirme</button>
             </div>
         </div>
     </div>
@@ -149,9 +166,9 @@
 <section id="identidad" style="background: var(--gris-claro);">
     <div class="st-title"><h2>Nuestra Identidad</h2></div>
     <div class="identity-grid">
-        <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Transformar la salud mediante formación de alta calidad y evidencia científica.</p></div>
+        <div class="i-card"><i class="fas fa-bullseye"></i><h3>Misión</h3><p>Transformar la salud mediante formación continua de alta calidad y evidencia científica.</p></div>
         <div class="i-card"><i class="fas fa-eye"></i><h3>Visión</h3><p>Ser referentes latinoamericanos en capacitación para profesionales de la salud.</p></div>
-        <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia técnica, integridad ética y compromiso con el bienestar humano.</p></div>
+        <div class="i-card"><i class="fas fa-gem"></i><h3>Valores</h3><p>Excelencia técnica, integridad ética y compromiso con el bienestar.</p></div>
     </div>
 </section>
 
@@ -163,16 +180,17 @@
             <div class="footer-autor"><h5>Dra. Elena Martínez</h5><span class="cargo-autor">Fisioterapeuta</span></div>
         </div>
         <div class="card-testimonio">
-            <p class="quote-body">"Metodología práctica y clara. Pude aplicarlo de inmediato en mis pacientes."</p>
+            <p class="quote-body">"Metodología práctica y clara. Pude aplicarlo de inmediato."</p>
             <div class="footer-autor"><h5>Lic. Ricardo Gómez</h5><span class="cargo-autor">Especialista SST</span></div>
         </div>
     </div>
 </section>
 
-<section id="postulacion" style="background: var(--gris-claro);">
-    <div class="st-title"><h2>Admisiones y Becas</h2></div>
-    <div class="registration-box">
-        <h3>Indica tus datos y postula a una Beca del 50%</h3>
+<section id="postulacion" style="background: var(--azul); color: white;">
+    <div class="st-title"><h2 style="color: white;">Admisiones y Becas</h2></div>
+    <div class="registration-box" style="color: #333;">
+        <h3>Postula a tu Beca del 50%</h3>
+        <p style="text-align: center; color: var(--rojo); font-weight: 700; margin-bottom: 25px;">⚠️ Solo 3 becas disponibles por programa.</p>
         <form id="mainForm" action="https://formspree.io/f/corfiterapiasredes@gmail.com" method="POST">
             <div class="form-grid">
                 <input type="text" name="Estudiante" id="nombre_est" placeholder="Nombres y Apellidos" required>
@@ -185,24 +203,23 @@
                     <option value="SST">SST</option>
                 </select>
             </div>
-            <button type="button" class="reg-submit-btn" onclick="validarRegistro()">Validar Datos y Postular</button>
-            <input type="hidden" name="Curso_Seleccionado" id="hidden_curso">
+            <button type="button" class="reg-submit-btn" onclick="validarRegistro()">Validar Datos y Aplicar Beca</button>
+            <input type="hidden" name="Curso_Seleccionado" id="hidden_curso" value="Interés en Beca">
         </form>
     </div>
 
-    <div id="seccion-validando" style="max-width: 900px; margin: 20px auto; background: white; padding: 40px; border-radius: 24px; text-align: center; display: none; border: 2px solid var(--azul);">
+    <div id="seccion-validando" style="max-width: 900px; margin: 20px auto; background: white; padding: 40px; border-radius: 24px; text-align: center; display: none; color: #333; border: 3px solid var(--rojo);">
         <div id="simulador-carga">
-            <h3 id="texto-validacion" style="color: var(--azul);">Consultando disponibilidad...</h3>
-            <div style="width: 100%; height: 15px; background: #eee; border-radius: 10px; overflow: hidden; margin: 20px 0;">
+            <h3 id="texto-validacion">Verificando vacantes...</h3>
+            <div style="width: 100%; height: 20px; background: #eee; border-radius: 10px; overflow: hidden; margin: 20px 0;">
                 <div id="barra-validacion" style="width: 0%; height: 100%; background: var(--rojo); transition: width 0.5s;"></div>
             </div>
         </div>
         <div id="resultado-exito" style="display: none;">
-            <h2 style="color: #27ae60;">¡BECA LOCALIZADA!</h2>
-            <p>Se ha activado un cupo con el 50% de descuento.</p>
-            <div style="margin-top: 30px; background: #fff3cd; padding: 20px; border-radius: 15px; border: 1px solid #ffeeba;">
-                <div id="beca-timer" style="font-size: 32px; font-weight: 900; color: var(--azul);">15:00</div>
-                <a href="https://go.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" target="_blank" style="display: inline-block; margin-top: 15px; padding: 20px 40px; background: #27ae60; color: white; text-decoration: none; font-weight: 900; border-radius: 50px;">ACCEDER CON MI BECA</a>
+            <h2 style="color: var(--verde);">¡BECA ASIGNADA!</h2>
+            <div style="margin-top: 30px; background: #fff3cd; padding: 25px; border-radius: 15px; border: 2px dashed #856404;">
+                <div id="beca-timer" style="font-size: 48px; font-weight: 900; color: var(--azul);">15:00</div>
+                <a href="https://go.hotmart.com/P104788227O?checkoutMode=2&offDiscount=BECA50" target="_blank" style="display: inline-block; padding: 20px 40px; background: var(--verde); color: white; text-decoration: none; font-weight: 900; border-radius: 50px; margin-top: 15px;">RECLAMAR MI BECA EN HOTMART</a>
             </div>
         </div>
     </div>
@@ -210,7 +227,8 @@
 
 <footer>
     <img src="Logo CorFiterapia _Trasparente.png" class="footer-logo">
-    <p>© 2026 CorFiterapia - Movimiento que Transforma Salud</p>
+    <p style="font-weight: 600; margin-bottom: 10px; letter-spacing: 1px;">MOVIMIENTO QUE TRANSFORMA SALUD</p>
+    <p>© 2026 CorFiterapia - Todos los derechos reservados</p>
 </footer>
 
 <script>
@@ -218,7 +236,7 @@
         const n = document.getElementById('nombre_est').value;
         const e = document.getElementById('email_est').value;
         if(!n || !e) {
-            alert("⚠️ Registro Obligatorio: Completa tus datos abajo para inscribirte.");
+            alert("⚠️ Registro Requerido: Completa tus datos abajo para validar tu perfil y aplicar a la beca.");
             window.scrollTo({top: document.getElementById('postulacion').offsetTop - 50, behavior: 'smooth'});
             document.getElementById('nombre_est').focus();
             return;
@@ -233,14 +251,16 @@
 
     function validarRegistro() {
         const n = document.getElementById('nombre_est').value;
-        if(!n) { alert("⚠️ Completa los campos."); return; }
+        if(!n) { alert("⚠️ Completa tus datos."); return; }
         document.getElementById('seccion-validando').style.display = 'block';
-        window.scrollTo({top: document.getElementById('seccion-validando').offsetTop - 100, behavior: 'smooth'});
+        window.scrollTo({top: document.getElementById('seccion-validando').offsetTop - 50, behavior: 'smooth'});
         let b = document.getElementById('barra-validacion');
         setTimeout(() => { b.style.width = "100%"; 
             document.getElementById('simulador-carga').style.display = 'none';
             document.getElementById('resultado-exito').style.display = 'block';
             iniciarContador();
+            const form = document.getElementById('mainForm');
+            fetch(form.action, { method: 'POST', body: new FormData(form) });
         }, 3000);
     }
 
