@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CorFiterapia | Formación Continua en Salud</title>
+    <title>CorFiterapia | Formación Continua de calidad</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -41,6 +41,13 @@
         .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
         .t-card { background: var(--gris); padding: 25px; border-radius: 15px; font-style: italic; border-left: 4px solid var(--rojo); }
 
+        /* Anuncio de Urgencia */
+        #urgency-ad { position: fixed; bottom: 100px; left: 20px; background: white; padding: 15px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); z-index: 1500; display: none; border-left: 5px solid var(--rojo); max-width: 250px; animation: slideIn 0.5s ease; }
+        @keyframes slideIn { from { transform: translateX(-110%); } to { transform: translateX(0); } }
+        #urgency-ad h4 { color: var(--rojo); font-size: 14px; margin-bottom: 5px; }
+        #urgency-ad p { font-size: 11px; font-weight: 600; }
+        .close-ad { position: absolute; top: 5px; right: 5px; cursor: pointer; font-size: 12px; color: #999; }
+
         .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); display: none; }
         input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Montserrat'; }
         .btn-form { background: var(--rojo); color: white; border: none; padding: 15px; width: 100%; border-radius: 30px; font-weight: 800; cursor: pointer; text-transform: uppercase; }
@@ -56,6 +63,12 @@
 <body>
 
     <div class="promo-bar">Formación Continua: Inscripciones abiertas 2026</div>
+
+    <div id="urgency-ad">
+        <span class="close-ad" onclick="this.parentElement.style.display='none'">✖</span>
+        <h4>¡ALERTA DE CUPOS!</h4>
+        <p>Solo quedan 3 becas del 50% disponibles para hoy. ¡Asegura tu futuro clínico ahora!</p>
+    </div>
 
     <header>
         <img src="Logo CorFiterapia _Trasparente.png" class="nav-logo-img" alt="CorFiterapia">
@@ -77,7 +90,7 @@
         <div class="courses-grid">
             
             <div class="c-card">
-                <img src="https://images.unsplash.com/photo-1582719202047-76d3432ee323?auto=format&fit=crop&w=500" class="c-img" alt="Fisioterapeuta estudiando con fonendoscopio">
+                <img src="https://images.pexels.com/photos/5908677/pexels-photo-5908677.jpeg?auto=compress&cs=tinysrgb&w=500" class="c-img" alt="Fisioterapeuta de tez negra estudiando">
                 <div class="c-info">
                     <h4>Diplomado en Farmacología aplicada a la Fisioterapia</h4>
                     <p>Nota: Aunque el fisioterapeuta no prescribe medicamentos, trabaja con pacientes medicados y debe conocer los efectos de los fármacos para ajustar sus técnicas y terapias de forma segura.</p>
@@ -90,7 +103,7 @@
                 <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=500" class="c-img">
                 <div class="c-info">
                     <h4>Diplomado Rehabilitación Cardiopulmonar en el Adulto Mayor</h4>
-                    <p>Diplomado en Rehabilitacion Cardiopulmonar en el adulto Mayor.</p>
+                    <p>Conoce el manejo integral del sistema respiratorio y circulatorio en pacientes de la tercera edad.</p>
                     <span class="c-price">$1.539.500 COP</span>
                     <button class="c-btn" style="background:var(--verde)" onclick="abrirRegistro('https://go.hotmart.com/P104788227O?dp=1', 'Rehab Cardiopulmonar', true)">Postular a Beca</button>
                 </div>
@@ -172,6 +185,11 @@
     </a>
 
     <script>
+        // Mostrar anuncio de urgencia después de 5 segundos
+        setTimeout(() => {
+            document.getElementById('urgency-ad').style.display = 'block';
+        }, 5000);
+
         let cursoActual = "";
         let linkActual = "";
         let esBeca = false;
