@@ -83,7 +83,7 @@
         <div style="padding: 0 40px 40px;">
             <div id="acceso-webinar" style="background: linear-gradient(135deg, #0a192f 0%, #162a4a 100%); border-radius: 30px; padding: 60px 20px; text-align: center;">
                 <i class="fas fa-key" style="font-size: 35px; color: #4ade80; margin-bottom: 20px;"></i>
-                <h3 style="color: white; margin-bottom: 20px;">Contenido Privado</h3>
+                <h3 style="color: white; margin-bottom: 20px; font-family: sans-serif;">Contenido Privado</h3>
                 <div style="max-width: 300px; margin: 0 auto;">
                     <input type="password" id="pass-webinar" placeholder="Introduce la clave" 
                         style="width: 100%; padding: 15px; border-radius: 12px; border: none; text-align: center; font-size: 16px; margin-bottom: 15px;">
@@ -103,11 +103,12 @@
 
             <div id="info-docente" style="display: none; background-color: #f8fafc; border-radius: 25px; padding: 30px; border: 1px solid #edf2f7;">
                 <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 25px;">
-                    <img src="FOTO MERCEDES2.jpg" alt="Mercedes Mendoza" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                    <img src="https://raw.githubusercontent.com/uicorfit/fotos/main/mercedes_mendoza.png" alt="Mercedes Mendoza" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                    
                     <div style="flex: 1; min-width: 250px;">
-                        <span style="color: var(--verde); font-weight: 800; font-size: 12px; text-transform: uppercase;">Docente de CorFiterapia</span>
-                        <h3 style="margin: 5px 0 10px 0; font-size: 24px; color: var(--azul);">Mercedes Mendoza</h3>
-                        <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6;">
+                        <span style="color: var(--verde); font-weight: 800; font-size: 12px; text-transform: uppercase; font-family: sans-serif;">Docente de CorFiterapia</span>
+                        <h3 style="margin: 5px 0 10px 0; font-size: 24px; color: var(--azul); font-family: sans-serif;">Mercedes Mendoza</h3>
+                        <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6; font-family: sans-serif;">
                             <b>Fisioterapeuta con más de 20 años de experiencia</b>, especialista en rehabilitación cardiopulmonar, especialista en salud y seguridad en el trabajo, Phd (c) Actividad física y Deporte.
                         </p>
                     </div>
@@ -120,6 +121,7 @@
 <script>
     function verificarClave() {
         const clave = document.getElementById('pass-webinar').value;
+        // La clave es CORFITERAPIA2026
         if (clave.toUpperCase() === "CORFITERAPIA2026") {
             // Mostrar video e info, ocultar bloqueo
             document.getElementById('acceso-webinar').style.display = 'none';
