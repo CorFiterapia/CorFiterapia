@@ -70,16 +70,25 @@
         <p style="color:var(--rojo); font-weight:800; letter-spacing:2px;">MOVIMIENTO QUE TRANSFORMA SALUD</p>
     </section>
 <section id="modulo-webinar" style="background-color: #ffffff; padding: 80px 5%;">
-        <div style="max-width: 1000px; margin: 0 auto; background: var(--gris); padding: 40px; border-radius: 30px; box-shadow: var(--shadow);">
+        <div style="max-width: 1000px; margin: 0 auto; background: var(--gris); padding: 40px; border-radius: 30px; box-shadow: var(--shadow); border: 1px solid rgba(10, 61, 98, 0.1);">
             
             <div class="st-title" style="margin-bottom: 30px;">
+                <span style="background: var(--rojo); color: white; padding: 5px 15px; border-radius: 50px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 15px; animation: pulse 2s infinite;">● ESTRENO EXCLUSIVO</span>
                 <h2 style="font-size: 28px;">Webinar 29 de abril</h2>
-                <p style="color: var(--azul); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; margin-top: 10px;">Sesión de Formación Exclusiva</p>
+                <p style="color: var(--azul); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; margin-top: 10px;">Fisioterapia en el Adulto Mayor</p>
             </div>
 
-            <div style="position: relative; border-radius: 20px; overflow: hidden; background: #000; line-height: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <div id="acceso-webinar" style="text-align: center; padding: 60px 20px; background: #0a192f; border-radius: 20px; color: white;">
+                <i class="fas fa-lock" style="font-size: 40px; margin-bottom: 20px; color: #4ade80;"></i>
+                <h3 style="margin-bottom: 20px; font-family: 'Playfair Display', serif;">Contenido Reservado para Inscritos</h3>
+                <button onclick="revelarWebinar()" style="background: var(--verde); color: white; border: none; padding: 18px 35px; border-radius: 50px; font-weight: 800; cursor: pointer; text-transform: uppercase; font-size: 14px; box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3); transition: 0.3s;">
+                    <i class="fas fa-play-circle" style="margin-right: 10px;"></i> Ingresar al Webinar de Fisioterapia
+                </button>
+            </div>
+
+            <div id="video-container" style="display: none; position: relative; border-radius: 20px; overflow: hidden; background: #000; line-height: 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                 <div style="padding:56.25% 0 0 0; position:relative;">
-                    <iframe src="https://player.vimeo.com/video/1187525777?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                    <iframe id="vimeo-player" src="https://player.vimeo.com/video/1187525777?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0" 
                         frameborder="0" 
                         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
                         style="position:absolute;top:0;left:0;width:100%;height:100%;" 
@@ -89,13 +98,37 @@
             </div>
 
             <div style="margin-top: 25px; text-align: center;">
-                <p style="font-size: 15px; color: #555; max-width: 600px; margin: 0 auto;">
-                    Revive nuestra sesión magistral sobre <strong>Fisioterapia en el Adulto Mayor</strong> y actualiza tus conocimientos con nuestra metodología de vanguardia.
+                <p style="font-size: 14px; color: #666; font-style: italic;">
+                    Bienvenido a la sesión magistral. Actualiza tus conocimientos con nuestra metodología de vanguardia.
                 </p>
             </div>
         </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
     </section>
+
+    <style>
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+    </style>
+
+    <script>
+        function revelarWebinar() {
+            // Oculta el botón de acceso con una transición suave
+            document.getElementById('acceso-webinar').style.display = 'none';
+            // Muestra el video
+            const videoCont = document.getElementById('video-container');
+            videoCont.style.display = 'block';
+            
+            // Opcional: Desplazar un poco la pantalla para centrar el video
+            window.scrollTo({
+                top: videoCont.offsetTop - 150,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <section id="cursos">
         <div class="st-title"><h2>Oferta Académica</h2></div>
         <div class="courses-grid">
