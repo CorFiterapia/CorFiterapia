@@ -72,22 +72,25 @@
 <section id="modulo-webinar" style="background-color: #ffffff; padding: 60px 5%;">
     <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 40px; overflow: hidden; box-shadow: 0 30px 60px rgba(10,61,98,0.15); border: 1px solid #edf2f7;">
         
+       <section id="modulo-webinar" style="background-color: #ffffff; padding: 60px 5%;">
+    <div style="max-width: 900px; margin: 0 auto; background: white; border-radius: 40px; overflow: hidden; box-shadow: 0 30px 60px rgba(10,61,98,0.15); border: 1px solid #edf2f7;">
+        
         <div style="padding: 40px 40px 20px; text-align: center;">
             <span style="background: #fff0f0; color: #b71c1c; padding: 6px 16px; border-radius: 50px; font-size: 11px; font-weight: 800; text-transform: uppercase; display: inline-block; margin-bottom: 20px; border: 1px solid rgba(183, 28, 28, 0.2);">
                 ● Estreno Exclusivo
             </span>
-            <h2 style="font-size: 30px; color: var(--azul); margin-bottom: 10px;">Webinar 29 de abril</h2>
+            <h2 style="font-size: 30px; color: #0a3d62; margin-bottom: 10px;">Webinar 29 de abril</h2>
             <p style="color: #666; font-weight: 600; text-transform: uppercase; font-size: 13px;">Fisioterapia en el Adulto Mayor</p>
         </div>
 
         <div style="padding: 0 40px 40px;">
             <div id="acceso-webinar" style="background: linear-gradient(135deg, #0a192f 0%, #162a4a 100%); border-radius: 30px; padding: 60px 20px; text-align: center;">
                 <i class="fas fa-key" style="font-size: 35px; color: #4ade80; margin-bottom: 20px;"></i>
-                <h3 style="color: white; margin-bottom: 20px; font-family: sans-serif;">Contenido Privado</h3>
+                <h3 style="color: white; margin-bottom: 20px;">Contenido Privado</h3>
                 <div style="max-width: 300px; margin: 0 auto;">
                     <input type="password" id="pass-webinar" placeholder="Introduce la clave" 
                         style="width: 100%; padding: 15px; border-radius: 12px; border: none; text-align: center; font-size: 16px; margin-bottom: 15px;">
-                    <button onclick="verificarClave()" style="background: var(--verde); color: white; border: none; padding: 16px; border-radius: 12px; width: 100%; font-weight: 800; cursor: pointer; text-transform: uppercase;">
+                    <button onclick="verificarClave()" style="background: #27ae60; color: white; border: none; padding: 16px; border-radius: 12px; width: 100%; font-weight: 800; cursor: pointer; text-transform: uppercase;">
                         Desbloquear Clase
                     </button>
                     <p id="error-msg" style="color: #ffbaba; font-size: 12px; margin-top: 15px; display: none;">⚠️ Clave incorrecta</p>
@@ -101,18 +104,12 @@
                 </div>
             </div>
 
-            <div id="info-docente" style="display: none; background-color: #f8fafc; border-radius: 25px; padding: 30px; border: 1px solid #edf2f7;">
-                <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 25px;">
-                    <img src="https://raw.githubusercontent.com/uicorfit/fotos/main/mercedes_mendoza.png" alt="Mercedes Mendoza" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-                    
-                    <div style="flex: 1; min-width: 250px;">
-                        <span style="color: var(--verde); font-weight: 800; font-size: 12px; text-transform: uppercase; font-family: sans-serif;">Docente de CorFiterapia</span>
-                        <h3 style="margin: 5px 0 10px 0; font-size: 24px; color: var(--azul); font-family: sans-serif;">Mercedes Mendoza</h3>
-                        <p style="margin: 0; font-size: 14px; color: #555; line-height: 1.6; font-family: sans-serif;">
-                            <b>Fisioterapeuta con más de 20 años de experiencia</b>, Especialista en Rehabilitación cardiopulmonar, Especialista en salud y seguridad en el trabajo, Magister en Gestion de las Organizaciones, Phd (c) Actividad física y Deporte.
-                        </p>
-                    </div>
-                </div>
+            <div id="info-docente" style="display: none; background-color: #f8fafc; border-radius: 25px; padding: 30px; border: 1px solid #edf2f7; text-align: center;">
+                <span style="color: #27ae60; font-weight: 800; font-size: 12px; text-transform: uppercase; display: block; margin-bottom: 5px;">Docente de CorFiterapia</span>
+                <h3 style="margin: 0 0 15px 0; font-size: 26px; color: #0a3d62;">Mercedes Mendoza</h3>
+                <p style="margin: 0; font-size: 15px; color: #444; line-height: 1.8; max-width: 600px; margin: 0 auto;">
+                    <b>Fisioterapeuta</b>, Especialista en Rehabilitación cardiopulmonar, Especialista en salud y seguridad en el trabajo, Magister en Gestion de las Organizaciones, Phd (c) Actividad física y Deporte.
+                </p>
             </div>
         </div>
     </div>
@@ -121,18 +118,15 @@
 <script>
     function verificarClave() {
         const clave = document.getElementById('pass-webinar').value;
-        // La clave es CORFITERAPIA2026
         if (clave.toUpperCase() === "CORFITERAPIA2026") {
-            // Mostrar video e info, ocultar bloqueo
             document.getElementById('acceso-webinar').style.display = 'none';
             document.getElementById('video-container').style.display = 'block';
             document.getElementById('info-docente').style.display = 'block';
         } else {
-            // Mostrar error
             document.getElementById('error-msg').style.display = 'block';
         }
     }
-</script>
+</script> 
     <section id="cursos">
         <div class="st-title"><h2>Oferta Académica</h2></div>
         <div class="courses-grid">
